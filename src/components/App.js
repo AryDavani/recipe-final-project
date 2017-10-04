@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import NutritionLabel from './NutritionLabel';
+// import {NutritionLabel} from 'nutrition-label-jquery-plugin';
 
 class App extends Component {
   constructor(){
@@ -22,15 +24,24 @@ class App extends Component {
   }
 
   render() {
+    let header = "data bites";
+
     return (
       <div className="container">
-        <form onSubmit={ this._handleFormSubmit }>
-          <div className="form-group">
-            <p>Paste a recipe below</p>
-            <textarea onChange={ this._handleChange } name="recipe" className="form-control" rows="3" value={ this.state.recipe }></textarea>
-          </div>
-          <button type="submit" className="btn btn-primary">Calculate Foods</button>
-        </form>
+        <div className="banner">
+          <h1>{ header }</h1>
+        </div>
+        <div className="well">
+          <form className="row" onSubmit={ this._handleFormSubmit }>
+            <div className="form-group col-md-6">
+              <h3>Paste a recipe below</h3>
+              <textarea onChange={ this._handleChange } name="recipe" className="form-control" rows="10" value={ this.state.recipe }></textarea>
+              <br/>
+              <button type="submit" className="btn btn-info btn-lg">Calculate Foods</button>
+            </div>
+          </form>
+          <NutritionLabel />
+        </div>
       </div>
     );
   }

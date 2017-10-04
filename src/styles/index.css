@@ -1,6 +1,23 @@
+
 body {
+  background-image: url("vegies.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   font-weight: lighter;
+}
+
+.banner h1 {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  /*font-family: 'Bad Script', cursive;*/
+  font-family: 'Amatic SC', cursive;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 100px;
+  letter-spacing: 20px;
 }
