@@ -7,14 +7,16 @@ export default class NutritionLabel extends Component {
 
   render(){
     return (
-      <div className="">
+      <div className="background">
         <table className="table">
           <thead className="thead-inverse">
             <tr className="bg-dark">
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              <th></th>
+              <th>Qty</th>
+              <th>Unit</th>
+              <th>Food</th>
+              <th>Calories</th>
+              <th>Weight</th>
             </tr>
           </thead>
           <tbody>
@@ -23,18 +25,8 @@ export default class NutritionLabel extends Component {
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+              <td>Otto</td>
+              <td>@mdo</td>
             </tr>
           </tbody>
         </table>
