@@ -1,6 +1,5 @@
 
 body {
-  font-family: 'Helvetica';
   margin: 0;
   padding: 0;
 }
@@ -20,15 +19,22 @@ body {
   display: flex;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #000;
 }
 .navbar a {
-  text-transform: uppercase;
   font-weight: lighter;
   text-decoration: none;
   padding: 20px 40px;
   color: #f7f0e2;
-  font-size: 20px;
+  font-size: 24px;
+  font-variant: small-caps;
+  letter-spacing: 2px;
 }
 .navbar a:hover {
-  text-decoration: underline;
+  color: rgb(223, 181, 0);
+}
+
+.modal {
+  font-weight: lighter;
 }
