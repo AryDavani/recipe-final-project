@@ -11,7 +11,7 @@ export default function BaseLayout() {
       <NavBar >
         <Switch>
           <Route exact path='/' component={ Home }/>
-          <Route path='/form' component={ Form }/>
+          <Route path='/add' component={ Form }/>
           <Route path='/nutrition' component={ NutritionLabel }/>
         </Switch>
       </NavBar>

@@ -25,7 +25,7 @@ body {
 .navbar a {
   font-weight: lighter;
   text-decoration: none;
-  padding: 20px 40px;
+  margin: 20px 40px;
   color: #f7f0e2;
   font-size: 24px;
   font-variant: small-caps;
