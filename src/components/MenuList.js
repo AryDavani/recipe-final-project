@@ -7,7 +7,9 @@ export default class MenuList extends Component {
 
   render(){
     return (
-      <h1>working</h1>
+      <div className="">
+        <p>menu list test</p>
+      </div>
     )
   }
 }

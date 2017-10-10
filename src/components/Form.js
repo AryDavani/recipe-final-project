@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
-import modalStyle from '../styles/modal';
+// import {loginModalStyle} from '../styles/modal';
 import NutritionTable from './NutritionTable';
 import {URL, HEADERS} from '../parse';
 
@@ -11,7 +11,8 @@ export default class Form extends Component {
     this.state = {
       recipe: '',
       nutrition: [],
-      render: false
+      render: false,
+      isOpen: true
     }
   }
 
@@ -45,6 +46,10 @@ export default class Form extends Component {
     console.log(this.state.recipe);
   }
 
+  _closeModal = () => {
+    this.setState({ isOpen: false });
+  }
+
   render(){
     console.log('STATE', this.state);
 
@@ -54,18 +59,19 @@ export default class Form extends Component {
 
 
     return (
-      <div className="background">
-        <Modal isOpen={ true } >
-          <form className="row" onSubmit={ this._handleFormSubmit }>
-            <div className="form-group col-md-6">
-              <h3>Paste a recipe below</h3>
-              <textarea onChange={ this._handleChange } name="recipe" className="form-control" rows="10" value={ this.state.recipe }></textarea>
-              <br/>
-              <button disabled={ !this.state.recipe } type="submit" className="btn btn-default btn-lg">Calculate Foods</button>
-            </div>
-          </form>
-          <div className="row">
-            <div className="col-md-6">
+      <div className="">
+        {/* <Modal isOpen={ this.state.isOpen } > */}
+          <button onClick={ this._closeModal }>close</button>
+          <div className="row col-md-6">
+            <form className="" onSubmit={ this._handleFormSubmit }>
+              <div className="form-group">
+                <h3>Enter a recipe below</h3>
+                <textarea onChange={ this._handleChange } name="recipe" className="form-control" rows="10" value={ this.state.recipe }></textarea>
+                <br/>
+                <button disabled={ !this.state.recipe } type="submit" className="btn btn-default btn-lg">Calculate Foods</button>
+              </div>
+            </form>
+            <div className="">
               { this.state.render ?
                 <table className="table">
                   <thead>
@@ -85,7 +91,9 @@ export default class Form extends Component {
               : null }
             </div>
           </div>
-        </Modal>
+          <div className="col-md-6">
+          </div>
+        {/* </Modal> */}
       </div>
     )
   }

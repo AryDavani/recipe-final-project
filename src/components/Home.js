@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 export default function Home() {
   return (
-    <div className="background">
+    <div className="">
     </div>
   )
 }
