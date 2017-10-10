@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import modalStyle from '../styles/modal';
-import NutritionLabel from './NutritionLabel';
+import NutritionTable from './NutritionTable';
 import {URL, HEADERS} from '../parse';
 
 export default class Form extends Component {
@@ -49,7 +49,7 @@ export default class Form extends Component {
     console.log('STATE', this.state);
 
     let nutritionInfo = this.state.nutrition.map((item, index) => {
-      return <NutritionLabel key={ index } item={ item } />
+      return <NutritionTable key={ index } item={ item } />
     });
 
 
@@ -64,26 +64,27 @@ export default class Form extends Component {
               <button disabled={ !this.state.recipe } type="submit" className="btn btn-default btn-lg">Calculate Foods</button>
             </div>
           </form>
-          <div className="col-md-6">
-            { this.state.render ?
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Qty</th>
-                    <th>Unit</th>
-                    <th>Food</th>
-                    <th>Calories</th>
-                    <th>Weight</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  { nutritionInfo }
-                </tbody>
-              </table>
-            : null }
+          <div className="row">
+            <div className="col-md-6">
+              { this.state.render ?
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Qty</th>
+                      <th>Unit</th>
+                      <th>Food</th>
+                      <th>Calories</th>
+                      <th>Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    { nutritionInfo }
+                  </tbody>
+                </table>
+              : null }
+            </div>
           </div>
-
         </Modal>
       </div>
     )

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Form from './Form';
-import NutritionLabel from './NutritionLabel';
 import NavBar from './NavBar';
 import MenuList from './MenuList';
 
