@@ -4,6 +4,7 @@ import Home from './Home';
 import Form from './Form';
 import NutritionLabel from './NutritionLabel';
 import NavBar from './NavBar';
+import MenuList from './MenuList';
 
 export default function BaseLayout() {
   return (
@@ -12,7 +13,7 @@ export default function BaseLayout() {
         <Switch>
           <Route exact path='/' component={ Home }/>
           <Route path='/add' component={ Form }/>
-          <Route path='/nutrition' component={ NutritionLabel }/>
+          <Route path='/menu' component={ MenuList }/>
         </Switch>
       </NavBar>
     </Router>
