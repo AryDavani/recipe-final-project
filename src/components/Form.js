@@ -61,7 +61,6 @@ export default class Form extends Component {
     return (
       <div className="">
         {/* <Modal isOpen={ this.state.isOpen } > */}
-          <button onClick={ this._closeModal }>close</button>
           <div className="row col-md-6">
             <form className="" onSubmit={ this._handleFormSubmit }>
               <div className="form-group">
