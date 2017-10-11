@@ -46,17 +46,12 @@ export default class Form extends Component {
     console.log(this.state.recipe);
   }
 
-  _closeModal = () => {
-    this.setState({ isOpen: false });
-  }
-
   render(){
     console.log('STATE', this.state);
 
     let nutritionInfo = this.state.nutrition.map((item, index) => {
       return <NutritionTable key={ index } item={ item } />
     });
-
 
     return (
       <div className="">

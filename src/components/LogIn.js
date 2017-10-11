@@ -10,7 +10,7 @@ export default class LogIn extends Component {
 
   render(){
     return (
-      <div className="">
+      <div className="background2">
         <Modal isOpen={ true } style={ loginModalStyle }>
           <h1>Log In!</h1>
           <br/>
