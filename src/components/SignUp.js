@@ -42,7 +42,7 @@ export default class SignUp extends Component {
   render(){
     return (
       <div className="background2">
-        <Modal isOpen={ this.props.location.pathname === '/signup' } style={ loginModalStyle }>
+        <Modal isOpen={ true } style={ loginModalStyle }>
           <h1>Sign Up!</h1>
           <br/>
           <div>
