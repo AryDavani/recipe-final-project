@@ -17,25 +17,25 @@ export default class SignUp extends Component {
 
     object['firstname'] = e.target.firstname.value;
     object['lastname'] = e.target.lastname.value;
-    object['email'] = e.target.email.value;
+    object['username'] = e.target.email.value;
     object['password'] = e.target.password.value;
 
     console.log('signup submitted', object);
 
     fetch(`${PARSE_URL}/users`, {
-      method: "POST",
-      body: object,
+      method: 'POST',
+      body: JSON.stringify(object),
       headers: PARSE_HEADERS
     })
     .then((response) => {
       return response.json();
     })
-    .then((result) => {
-      console.log('result', result);
-      localStorage.setItem('user', JSON.stringify(result));
+    .then((user) => {
+      console.log('user', user);
+      localStorage.setItem('user', JSON.stringify(user));
     })
     .catch((err) => {
-      console.log(err);
+      console.log('error', err);
     })
   }
 

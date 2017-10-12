@@ -4,7 +4,7 @@ import {loginModalStyle} from '../styles/modal';
 import {NavLink} from 'react-router-dom';
 import { PARSE_URL, PARSE_HEADERS } from '../parse';
 
-let $ = window.$ = require('jquery');
+let $ = window.$;
 
 
 export default class LogIn extends Component {
@@ -15,19 +15,18 @@ export default class LogIn extends Component {
   _handleLogin = (e) => {
     e.preventDefault();
 
-    let object = {};
+    let un = e.target.email.value;
+    let pw = e.target.password.value;
+    let qs = 'username=' + encodeURIComponent(un) + '&password=' + pw;
 
-    object['email'] = e.target.email.value;
-    object['password'] = e.target.password.value;
+    console.log('login submitted', qs);
 
-    console.log('login submitted', object);
-
-    fetch(`${PARSE_URL}/login?${$.param(object)}`, { headers: PARSE_HEADERS })
+    fetch(`${PARSE_URL}/login?${qs}`, { headers: PARSE_HEADERS })
     .then((response) => {
       return response.json();
     })
-    .then((result) => {
-      localStorage.setItem('user', JSON.stringify(result));
+    .then((user) => {
+      localStorage.setItem('user', JSON.stringify(user));
     })
     .catch((err) => {
       console.log(err);
