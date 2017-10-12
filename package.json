@@ -1,4 +1,6 @@
 {
+
+  "homepage": "https://arydavani.github.io/recipe-final-project/",
   "name": "recipe-data",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +17,8 @@
     "react-scripts": "1.0.14"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

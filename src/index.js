@@ -12,14 +12,12 @@ import MenuList from './components/MenuList';
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import InfoModal from './components/InfoModal';
-import Accounts from './components/Accounts';
 
 ReactDOM.render(
   <Router>
     <BaseLayout>
       <Switch>
-        <Route exact path='/' component={ Accounts }/>
-        <Route path='/home' component={ Home }/>
+        <Route exact path='/' component={ Home }/>
         <Route path='/add' component={ Form }/>
         <Route path='/info' component={ InfoModal }/>
         <Route path='/menu' component={ MenuList }/>
