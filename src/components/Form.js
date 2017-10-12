@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
-// import {loginModalStyle} from '../styles/modal';
 import NutritionTable from './NutritionTable';
 import {URL, HEADERS} from '../parse';
 
@@ -10,9 +9,8 @@ export default class Form extends Component {
 
     this.state = {
       recipe: '',
-      nutrition: [],
-      render: false,
-      isOpen: true
+      title: '',
+      nutrition: []
     }
   }
 
@@ -47,7 +45,6 @@ export default class Form extends Component {
   }
 
   render(){
-    console.log('STATE', this.state);
 
     let nutritionInfo = this.state.nutrition.map((item, index) => {
       return <NutritionTable key={ index } item={ item } />
@@ -55,39 +52,37 @@ export default class Form extends Component {
 
     return (
       <div className="">
-        {/* <Modal isOpen={ this.state.isOpen } > */}
-          <div className="row col-md-6">
-            <form className="" onSubmit={ this._handleFormSubmit }>
-              <div className="form-group">
-                <h3>Enter a recipe below</h3>
-                <textarea onChange={ this._handleChange } name="recipe" className="form-control" rows="10" value={ this.state.recipe }></textarea>
-                <br/>
-                <button disabled={ !this.state.recipe } type="submit" className="btn btn-default btn-lg">Calculate Foods</button>
-              </div>
-            </form>
-            <div className="">
-              { this.state.render ?
-                <table className="table">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Qty</th>
-                      <th>Unit</th>
-                      <th>Food</th>
-                      <th>Calories</th>
-                      <th>Weight</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    { nutritionInfo }
-                  </tbody>
-                </table>
-              : null }
+        <div className="row col-md-6">
+          <form className="" onSubmit={ this._handleFormSubmit }>
+            <div className="form-group">
+              <h3>Enter a recipe below</h3>
+              <textarea onChange={ this._handleChange } name="recipe" className="form-control" rows="10" value={ this.state.recipe }></textarea>
+              <br/>
+              <button disabled={ !this.state.recipe } type="submit" className="btn btn-default btn-lg">Calculate Foods</button>
             </div>
+          </form>
+          <div className="">
+            { this.state.render ?
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Qty</th>
+                    <th>Unit</th>
+                    <th>Food</th>
+                    <th>Calories</th>
+                    <th>Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  { nutritionInfo }
+                </tbody>
+              </table>
+            : null }
           </div>
-          <div className="col-md-6">
-          </div>
-        {/* </Modal> */}
+        </div>
+        <div className="col-md-6">
+        </div>
       </div>
     )
   }

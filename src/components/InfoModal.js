@@ -6,9 +6,6 @@ export default class InfoModal extends Component {
   constructor() {
     super();
 
-    this.state = {
-      isOpen: true
-    }
   }
 
   render(){

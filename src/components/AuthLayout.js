@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-export default class BaseLayout extends Component {
+export default class AuthLayout extends Component {
   render(){
     return (
-      <div className="">
+      <div className="background2">
         {this.props.children}
       </div>
     )
