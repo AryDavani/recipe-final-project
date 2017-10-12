@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import NutritionTable from './NutritionTable';
-import {URL, HEADERS} from '../parse';
+import {API_URL, API_HEADERS} from '../parse';
 
 export default class Form extends Component {
   constructor(){
@@ -21,10 +21,10 @@ export default class Form extends Component {
       query: this.state.recipe
     }
 
-    fetch(URL, {
+    fetch(API_URL, {
       method: "POST",
       body: JSON.stringify(object),
-      headers: HEADERS
+      headers: API_HEADERS
     }).then(response => {
       return response.json();
     }).then(data => {
@@ -32,16 +32,15 @@ export default class Form extends Component {
         nutrition: data.foods,
         render: true
       })
-      console.log('state', this.state);
+      console.log('form submit', this.state);
     });
-
   }
 
   _handleChange = (e) => {
     this.setState({
       recipe: e.target.value
     });
-    console.log(this.state.recipe);
+    console.log("handle change", this.state.recipe);
   }
 
   render(){
@@ -80,8 +79,6 @@ export default class Form extends Component {
               </table>
             : null }
           </div>
-        </div>
-        <div className="col-md-6">
         </div>
       </div>
     )
