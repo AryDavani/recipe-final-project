@@ -8,44 +8,26 @@ export default class Form extends Component {
     super();
 
     this.state = {
-      recipe: '',
-      title: '',
-      nutrition: []
+      recipe: ''
     }
   }
 
   _handleFormSubmit = (e) => {
     e.preventDefault();
+    let item = { query: this.state.recipe };
 
-    let object = {
-      query: this.state.recipe
-    }
-
-    fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify(object),
-      headers: API_HEADERS
-    }).then(response => {
-      return response.json();
-    }).then(data => {
-      this.setState({
-        nutrition: data.foods,
-        render: true
-      })
-      console.log('form submit', this.state);
-    });
+    this.props.handleFormSubmit(item);
   }
 
   _handleChange = (e) => {
     this.setState({
       recipe: e.target.value
     });
-    console.log("handle change", this.state.recipe);
   }
 
   render(){
 
-    let nutritionInfo = this.state.nutrition.map((item, index) => {
+    let nutritionInfo = this.props.state.nutrition.map((item, index) => {
       return <NutritionTable key={ index } item={ item } />
     });
 
@@ -61,7 +43,7 @@ export default class Form extends Component {
             </div>
           </form>
           <div className="">
-            { this.state.render ?
+            { this.props.state.render ?
               <table className="table">
                 <thead>
                   <tr>
