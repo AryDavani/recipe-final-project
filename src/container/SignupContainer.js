@@ -22,6 +22,7 @@ export default class SignupContainer extends Component {
     .then((user) => {
       console.log('user', user);
       localStorage.setItem('user', JSON.stringify(user));
+      this.props.history.push('/login');
     })
     .catch((err) => {
       console.log('error', err);

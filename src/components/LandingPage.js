@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
-import BaseLayout from './BaseLayout';
-
+import LandingPageNavbar from './LandingPageNavbar';
 
 export default class LandingPage extends Component {
-  constructor() {
-    super();
-  }
   render(){
     return(
-      <BaseLayout>
-      </BaseLayout>
+      <div className="background">
+        <LandingPageNavbar />
+        { this.props.children }
+      </div>
     )
   }
 }

@@ -56,6 +56,12 @@ body {
   padding: 2%;
   background-color: #fff;
 }
+
 .auth-forms h1 {
   text-align: center;
+}
+
+.info {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4%;
 }

@@ -21,7 +21,7 @@ export default class LoginContainer extends Component {
     .then((user) => {
       console.log("login submitted", user);
       localStorage.setItem('user', JSON.stringify(user));
-      this.props.history.push('/');
+      this.props.history.push('/home');
     })
     .catch((err) => {
       console.log(err);

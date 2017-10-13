@@ -9,11 +9,13 @@ import MenuContainer from './container/MenuContainer';
 import SignupContainer from './container/SignupContainer';
 import LoginContainer from './container/LoginContainer';
 import FormContainer from './container/FormContainer';
+import BaseLayout from './components/BaseLayout';
 
 ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path='/' component={ LandingPage }/>
+      <Route path='/home' component={ BaseLayout }/>
       <Route path='/add' component={ FormContainer }/>
       <Route path='/menu' component={ MenuContainer }/>
       <Route path='/signup' component={ SignupContainer }/>

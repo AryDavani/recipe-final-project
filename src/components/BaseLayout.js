@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
+import Navbar from './Navbar';
 
 export default class BaseLayout extends Component {
   render(){
     return (
       <div className="background">
-        <NavBar />
-        {this.props.children}
+        <Navbar />
+        { this.props.children }
       </div>
     )
   }
