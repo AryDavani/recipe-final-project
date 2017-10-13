@@ -2,61 +2,46 @@ import React, {Component} from 'react';
 import Modal from 'react-modal';
 import {loginModalStyle} from '../styles/modal';
 import {NavLink} from 'react-router-dom';
+import AuthLayout from './AuthLayout';
 import { PARSE_URL, PARSE_HEADERS } from '../parse';
 
+let $ = window.$;
 
-export default class SignUp extends Component {
+
+export default class LoginForm extends Component {
   constructor() {
     super();
   }
 
-  _handleSignUp = (e) => {
+  _handleLogin = (e) => {
     e.preventDefault();
 
-    let object = {};
+    let un = e.target.email.value;
+    let pw = e.target.password.value;
+    let qs = 'username=' + encodeURIComponent(un) + '&password=' + pw;
 
-    object['firstname'] = e.target.firstname.value;
-    object['lastname'] = e.target.lastname.value;
-    object['username'] = e.target.email.value;
-    object['password'] = e.target.password.value;
+    console.log('login submitted', qs);
 
-    console.log('signup submitted', object);
-
-    fetch(`${PARSE_URL}/users`, {
-      method: 'POST',
-      body: JSON.stringify(object),
-      headers: PARSE_HEADERS
-    })
+    fetch(`${PARSE_URL}/login?${qs}`, { headers: PARSE_HEADERS })
     .then((response) => {
       return response.json();
     })
     .then((user) => {
-      console.log('user', user);
       localStorage.setItem('user', JSON.stringify(user));
     })
     .catch((err) => {
-      console.log('error', err);
+      console.log(err);
     })
   }
 
   render(){
     return (
-      <div className="background2">
+      <AuthLayout>
         <Modal isOpen={ true } style={ loginModalStyle }>
-          <h1>Sign Up!</h1>
+          <h1>Log In!</h1>
           <br/>
           <div>
-            <form onSubmit={ this._handleSignUp }>
-              <div className="row">
-                <div className="form-group col-md-6">
-                  <label>First name</label>
-                  <input type="text" className="form-control" name="firstname" placeholder="First name" />
-                </div>
-                <div className="form-group col-md-6">
-                  <label>Last name</label>
-                  <input type="text" className="form-control" name="lastname" placeholder="Last name" />
-                </div>
-              </div>
+            <form onSubmit={ this._handleLogin }>
               <div className="row">
                 <div className="form-group col-md-12">
                   <label>Email address</label>
@@ -72,11 +57,11 @@ export default class SignUp extends Component {
             </form>
             <br/>
             <div>
-              <span>Already have an account? <NavLink to='/login'>Log in</NavLink></span>
+              <span>Don't have an account? <NavLink to='/signup'>Sign Up</NavLink></span>
             </div>
           </div>
         </Modal>
-      </div>
+      </AuthLayout>
     )
   }
 }

@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
+import BaseLayout from './BaseLayout';
 
-export default function Home() {
-  return (
-    <div className="background">
-      <h1>Home Page</h1>
-      <h1>Home Page</h1>
-      <h1>Home Page</h1>
-      <h1>Home Page</h1>
-      <h1>Home Page</h1>
-      <h1>Home Page</h1>
-      <h1>Home Page</h1>
-    </div>
-  )
+
+export default class Home extends Component {
+  constructor() {
+    super();
+  }
+  render(){
+    return(
+      <BaseLayout>
+      </BaseLayout>
+    )
+  }
 }

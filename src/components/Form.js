@@ -50,7 +50,7 @@ export default class Form extends Component {
     });
 
     return (
-      <div className="">
+      <Modal isOpen={ true }>
         <div className="row col-md-6">
           <form className="" onSubmit={ this._handleFormSubmit }>
             <div className="form-group">
@@ -80,7 +80,7 @@ export default class Form extends Component {
             : null }
           </div>
         </div>
-      </div>
+      </Modal>
     )
   }
 }

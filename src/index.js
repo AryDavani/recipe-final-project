@@ -4,27 +4,22 @@ import './styles/index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
-import BaseLayout from './components/BaseLayout';
 import Home from './components/Home';
-import Form from './components/Form';
-import NavBar from './components/NavBar';
-import MenuList from './components/MenuList';
-import SignUp from './components/SignUp';
-import LogIn from './components/LogIn';
-import InfoModal from './components/InfoModal';
+import MenuContainer from './container/MenuContainer';
+import SignupContainer from './container/SignupContainer';
+import LoginContainer from './container/LoginContainer';
+import FormContainer from './container/FormContainer';
 
 ReactDOM.render(
   <Router>
-    <BaseLayout>
-      <Switch>
-        <Route exact path='/' component={ Home }/>
-        <Route path='/add' component={ Form }/>
-        <Route path='/info' component={ InfoModal }/>
-        <Route path='/menu' component={ MenuList }/>
-        <Route path='/signup' component={ SignUp }/>
-        <Route path='/login' component={ LogIn }/>
-      </Switch>
-    </BaseLayout>
+    <Switch>
+      <Route exact path='/' component={ Home }/>
+      <Route path='/add' component={ FormContainer }/>
+      <Route path='/menu' component={ MenuContainer }/>
+      <Route path='/signup' component={ SignupContainer }/>
+      <Route path='/login' component={ LoginContainer }/>
+      {/* <Redirect path='/' /> */}
+    </Switch>
   </Router>
 
   , document.getElementById('root'));
