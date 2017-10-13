@@ -25,7 +25,7 @@ export const modalStyle = {
   }
 };
 
-export const loginModalStyle = {
+export const authModalStyle = {
   overlay : {
     position          : 'fixed',
     top               : '0%',

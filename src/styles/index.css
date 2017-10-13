@@ -43,6 +43,19 @@ body {
   color: rgb(223, 181, 0);
 }
 
-.modal {
-  font-weight: lighter;
+.center-flex {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-forms {
+  border-radius: 5px;
+  padding: 2%;
+  background-color: #fff;
+}
+.auth-forms h1 {
+  text-align: center;
 }
