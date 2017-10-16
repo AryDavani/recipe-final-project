@@ -6,17 +6,20 @@ import { NavLink } from 'react-router-dom';
 export default class LandingPage extends Component {
   render(){
     return(
-      <div className="">
+      <div>
         {/* <LandingPageNavbar /> */}
         {/* { this.props.children } */}
         <div className="background3">
-          <div className="tint">
-            <h1>Kalories</h1>
+          <div className="">
+            <h1 className="header">BiteSize</h1>
+            <i>Calculate your menu items!</i>
           </div>
         </div>
         <div>
           <Info/>
-          <button onClick={() => { this.props.history.push('/signup') }} className="btn btn-primary btn-lg">Get Started</button>
+        </div>
+        <div className="footer">
+
         </div>
       </div>
     )
