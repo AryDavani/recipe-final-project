@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Modal from 'react-modal';
 import LoginForm from '../components/LoginForm';
 import { PARSE_URL, PARSE_HEADERS } from '../parse';
 
