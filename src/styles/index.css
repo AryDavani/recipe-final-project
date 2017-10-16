@@ -94,6 +94,11 @@ body {
 
 }
 .cards div {
+  font-weight: 300;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 10px 10px 20px gray;
   flex-basis: 30%;
   height: 300px;

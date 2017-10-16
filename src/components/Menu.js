@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class MenuList extends Component {
+export default class Menu extends Component {
   constructor() {
     super();
   }

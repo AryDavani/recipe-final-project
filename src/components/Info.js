@@ -16,19 +16,15 @@ export default class Info extends Component {
         </div>
         <div className="cards">
           <div>
-
+            <p>Add Ingredients</p>
           </div>
           <div>
-
+            <p>Get Nutrition</p>
           </div>
           <div>
-
+            <p>Calculate Items</p>
           </div>
         </div>
-        <div className="get-started">
-          <button onClick={() => { this.props.history.push('/signup') }} className="btn btn-success btn-lg">Get Started!</button>
-        </div>
-
       </div>
     )
   }

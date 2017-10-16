@@ -20,7 +20,6 @@ ReactDOM.render(
       <Route path='/menu' component={ MenuContainer }/>
       <Route path='/signup' component={ SignupContainer }/>
       <Route path='/login' component={ LoginContainer }/>
-      {/* <Redirect path='/' /> */}
     </Switch>
   </Router>
 
