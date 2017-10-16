@@ -3,7 +3,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.red {
+  color: red;
+}
 .background {
   background-image: url("food1.jpg");
   background-size: cover;
@@ -26,17 +28,19 @@ body {
   text-align: center;
   color: #fff;
 }
-.navbar {
-  width: 100vw;
-  position: absolute;
-  top: 0;
+.background4 {
+  background-color: gray;
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #000;
+  align-items: center;
 }
-.navbar a {
+.navbar1 {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #02122C;
+}
+.navbar1 a {
   font-weight: lighter;
   text-decoration: none;
   margin: 20px 40px;
@@ -45,7 +49,7 @@ body {
   font-variant: small-caps;
   letter-spacing: 2px;
 }
-.navbar a:hover {
+.navbar1 a:hover {
   color: rgb(223, 181, 0);
 }
 
@@ -66,7 +70,9 @@ body {
 .auth-forms h1 {
   text-align: center;
 }
-
+.menu-card {
+  background-color: #fff;
+}
 .info {
   box-shadow: 10px 10px 20px gray;
   margin: 5% 0%;

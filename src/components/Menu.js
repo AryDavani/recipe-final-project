@@ -6,9 +6,9 @@ export default class Menu extends Component {
   }
 
   render(){
+    console.log('menu componenet', this.props.menuItems);
     return (
-      <div className="">
-        <p>menu list test</p>
+      <div className="menu">
       </div>
     )
   }

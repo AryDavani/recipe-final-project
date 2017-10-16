@@ -11,12 +11,13 @@ import LoginContainer from './container/LoginContainer';
 import FormContainer from './container/FormContainer';
 import BaseLayout from './components/BaseLayout';
 
+import authRequired from './actions/actions';
+
 ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path='/' component={ LandingPage }/>
-      <Route path='/home' component={ BaseLayout }/>
-      <Route path='/add' component={ FormContainer }/>
+      <Route path='/home' component={ authRequired(FormContainer) }/>
       <Route path='/menu' component={ MenuContainer }/>
       <Route path='/signup' component={ SignupContainer }/>
       <Route path='/login' component={ LoginContainer }/>

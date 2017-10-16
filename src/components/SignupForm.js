@@ -35,21 +35,21 @@ export default class SignupForm extends Component {
                 <div className="row">
                   <div className="form-group col-md-6">
                     <label>First name</label>
-                    <input type="text" className="form-control" name="firstname" placeholder="First name" />
+                    <input required type="text" className="form-control" name="firstname" placeholder="First name" />
                   </div>
                   <div className="form-group col-md-6">
                     <label>Last name</label>
-                    <input type="text" className="form-control" name="lastname" placeholder="Last name" />
+                    <input required type="text" className="form-control" name="lastname" placeholder="Last name" />
                   </div>
                 </div>
                 <div className="row">
                   <div className="form-group col-md-12">
                     <label>Email address</label>
-                    <input type="email" className="form-control" name="email" placeholder="Enter email" />
+                    <input required type="email" className="form-control" name="email" placeholder="Enter email" />
                   </div>
                   <div className="form-group col-md-12">
                     <label>Password</label>
-                    <input type="password" className="form-control" name="password" placeholder="Password" />
+                    <input required type="password" className="form-control" name="password" placeholder="Password" />
                   </div>
                 </div>
                 <br/>

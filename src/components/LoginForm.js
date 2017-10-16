@@ -22,7 +22,7 @@ export default class LoginForm extends Component {
     let qs = 'username=' + encodeURIComponent(un) + '&password=' + pw;
 
     this.props.handleLoginForm(qs);
-
+    e.target.reset();
   }
 
   render(){
@@ -33,17 +33,17 @@ export default class LoginForm extends Component {
         <div className="center-flex">
           <div className="auth-forms">
             <h1>Log In!</h1>
-            <br/>
+            { this.props.errorMsg ? <p className="red">{this.props.errorMsg}</p> : <br/> }
             <div>
               <form onSubmit={ this._handleLoginForm }>
                 <div className="row">
                   <div className="form-group col-md-12">
                     <label>Email address</label>
-                    <input type="email" className="form-control" name="email" placeholder="Enter email" />
+                    <input required type="email" className="form-control" name="email" placeholder="Enter email" />
                   </div>
                   <div className="form-group col-md-12">
                     <label>Password</label>
-                    <input type="password" className="form-control" name="password" placeholder="Password" />
+                    <input required type="password" className="form-control" name="password" placeholder="Password" />
                   </div>
                 </div>
                 <br/>

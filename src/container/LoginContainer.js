@@ -9,6 +9,10 @@ let $ = window.$;
 export default class LoginContainer extends Component {
   constructor() {
     super();
+
+    this.state = {
+      errorMsg: ''
+    }
   }
 
   _handleLoginForm = (qs) => {
@@ -19,9 +23,19 @@ export default class LoginContainer extends Component {
       return response.json();
     })
     .then((user) => {
-      console.log("login submitted", user);
+      console.log("user", user);
+
       localStorage.setItem('user', JSON.stringify(user));
-      this.props.history.push('/home');
+
+      // --- if trying to log in with wrong user/pass
+      // --- don't set session or set state
+      if (user.username) {
+        // --- setting session token to header for new headers
+        PARSE_HEADERS['X-Parse-Session-Token'] = user.sessionToken;
+        this.props.history.push('/home');
+      } else {
+        this.setState({errorMsg: user.error})
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -30,7 +44,7 @@ export default class LoginContainer extends Component {
 
   render(){
     return (
-      <LoginForm handleLoginForm={ this._handleLoginForm } />
+      <LoginForm handleLoginForm={ this._handleLoginForm } errorMsg={ this.state.errorMsg }/>
     )
   }
 }
