@@ -14,11 +14,11 @@ export default function authRequired(ComposedComponent){
       }
 
       var currentUser = JSON.parse(user);
-      return !!currentUser.sessionToken;
+      return currentUser.sessionToken;
     }
 
     componentWillMount(){
-      console.log('Is Logged In: ', !this.isLoggedIn());
+      console.log('Is Logged In: ', this.isLoggedIn());
       !this.isLoggedIn() ? this.props.history.push('/login') : null;
     }
 

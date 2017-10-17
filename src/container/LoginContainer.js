@@ -15,7 +15,6 @@ export default class LoginContainer extends Component {
   }
 
   _handleLoginForm = (qs) => {
-    console.log('qs', qs);
 
     fetch(`${PARSE_URL}/login?${qs}`, { headers: PARSE_HEADERS })
     .then((response) => {
