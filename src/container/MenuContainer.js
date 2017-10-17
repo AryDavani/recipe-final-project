@@ -28,13 +28,12 @@ export default class MenuContainer extends Component {
     };
 
     // fetching user's posts
-    fetch(PARSE_URL + '/classes/menuItems/?where={"user":' + JSON.stringify(pointer) + '}', {
+    fetch(PARSE_URL + '/classes/menuItems/?where={"owner":' + JSON.stringify(pointer) + '}', {
       headers: PARSE_HEADERS
     }).then((response) => {
       return response.json();
     }).then((data) => {
-      console.log('data from server: ', data.results);
-      // this.setState({menuItems: data.results})
+      this.setState({menuItems: data.results})
     })
   }
 

@@ -133,6 +133,20 @@ html {
   background-color: #02122C;
   height: 74px;
   overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.footer p {
+  color: gray;
+  margin-right: 20px;
+}
+.footer a {
+  color: #377BB5;
+}
+.footer a:hover {
+  color: rgb(255, 230, 0);
+  text-decoration: none;
 }
 .steps {
   color: #fff;
