@@ -22,7 +22,7 @@ export default class Info extends Component {
             <p>Get Nutrition</p>
           </div>
           <div>
-            <p>Calculate Items</p>
+            <p>Calculate Servings</p>
           </div>
         </div>
       </div>

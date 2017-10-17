@@ -55,22 +55,27 @@ export default class FormContainer extends Component {
     });
   }
 
-  _handleRecipePost = (recipe) => {
-    recipe.query = this.state.query;
-    recipe.calories = this.state.calories;
-    recipe.owner = {
+  _handleRecipePost = (item) => {
+    let totalCalories = this.state.calories / this.state.servings;
+    item.recipe = this.state.recipe;
+    item.calories = totalCalories;
+    item.servings = this.state.servings;
+    item.owner = {
       "__type": "Pointer",
       "className": "_User",
       "objectId": this.state.user.objectId
     };
-    console.log('recipe, recipe', recipe);
-    // fetch(`${PARSE_URL}/classes/menuItems`, {
-    //   method: 'POST',
-    //   body: JSON.stringify(recipe),
-    //   headers: PARSE_HEADERS,
-    //
-    //
-    // })
+    console.log('recipe, recipe', item);
+
+    fetch(`${PARSE_URL}/classes/menuItems`, {
+      method: 'POST',
+      body: JSON.stringify(item),
+      headers: PARSE_HEADERS
+    }).then((resp) => {
+      return resp.json();
+    }).then((message) => {
+      console.log('message', message);
+    });
   }
 
   render(){

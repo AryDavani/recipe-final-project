@@ -9,30 +9,37 @@ export default class MenuContainer extends Component {
 
     this.state = {
       menuItems: [],
-      user: JSON.parse(localStorage.getItem('user'))
+      user: {}
     }
   }
 
-  componentDidMount = () => {
-      // Building pointer per user to pull specific posts on logged in user
-      let pointer = {
-        "__type":"Pointer",
-        "className":"_User",
-        "objectId": JSON.parse(localStorage.getItem('user'))
-      };
+  componentWillMount = () => {
+    let user = JSON.parse(localStorage.getItem('user'));
 
-      // fetching user's posts
-      fetch(PARSE_URL + '/classes/menuItems/?where={"user":' + JSON.stringify(pointer) + '}', {
-        headers: PARSE_HEADERS
-      }).then((response) => {
-        return response.json();
-      }).then((data) => {
-        console.log('data from server: ', data.results);
-        this.setState({menuItems: data.results})
-      })
+    this.setState({
+      user: user
+    });
+
+    // Building pointer per user to pull specific posts on logged in user
+    let pointer = {
+      "__type":"Pointer",
+      "className":"_User",
+      "objectId": user.objectId
+    };
+
+    // fetching user's posts
+    fetch(PARSE_URL + '/classes/menuItems/?where={"user":' + JSON.stringify(pointer) + '}', {
+      headers: PARSE_HEADERS
+    }).then((response) => {
+      return response.json();
+    }).then((data) => {
+      console.log('data from server: ', data.results);
+      // this.setState({menuItems: data.results})
+    })
   }
 
   render(){
+    console.log('render state', this.state);
     return(
       <BaseLayout>
         <Menu menuItems={ this.state.menuItems }/>

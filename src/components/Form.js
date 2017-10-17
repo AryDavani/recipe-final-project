@@ -9,8 +9,7 @@ export default class Form extends Component {
     super();
 
     this.state = {
-      recipe: '',
-      servings: 1
+      recipe: ''
     }
   }
 
@@ -29,9 +28,6 @@ export default class Form extends Component {
 
   _handleCalorieCount = (e) => {
     let servings = e.target.value;
-    this.setState({
-      servings: servings
-    });
     this.props.handleCalorieCount(servings);
   }
 
