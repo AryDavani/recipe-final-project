@@ -13,10 +13,16 @@ export default class FormContainer extends Component {
       recipe: '',
       name: '',
       calories: 0,
-      query: '',
+      servings: 1,
       nutrition: [],
-      user: JSON.parse(localStorage.getItem('user'))
+      user: {}
     }
+  }
+
+  componentDidMount = () => {
+    this.setState({
+      user: JSON.parse(localStorage.getItem('user'))
+    })
   }
 
   _handleFormSubmit = (item) => {
@@ -28,8 +34,13 @@ export default class FormContainer extends Component {
     }).then(response => {
       return response.json();
     }).then(data => {
+      let calories = 0;
+      data.foods.map((item) => {
+        calories += item.nf_calories;
+      });
       this.setState({
-        query: item.query,
+        calories: calories.toFixed([0]),
+        recipe: item.query,
         nutrition: data.foods,
         render: true
       });
@@ -38,9 +49,10 @@ export default class FormContainer extends Component {
   }
 
   _handleCalorieCount = (num) =>{
-    let calories = this.state.calories / num;
-
-    console.log('num', num);
+    console.log('NUMBER', num);
+    this.setState({
+      servings: num
+    });
   }
 
   _handleRecipePost = (recipe) => {
@@ -62,8 +74,6 @@ export default class FormContainer extends Component {
   }
 
   render(){
-    console.log('form container', this.state);
-
     return(
       <BaseLayout>
         <Form handleFormSubmit={ this._handleFormSubmit } state={ this.state } handleCalorieCount={ this._handleCalorieCount }/>

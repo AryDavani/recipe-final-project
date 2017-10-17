@@ -3,6 +3,10 @@ body {
   margin: 0;
   padding: 0;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
 .red {
   color: red;
 }
@@ -117,6 +121,37 @@ body {
   padding: 50px;
 }
 .footer {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
   background-color: #02122C;
-  height: 100px;
+  height: 74px;
+  overflow: hidden;
+}
+.steps {
+  color: #fff;
+  margin: 40px 0px 20px 0px;
+  background-color: #02122C;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.step-two {
+  margin: 10px 0px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(170, 170, 170, 0.3);
+}
+.to-gray {
+  color: gray;
+}
+.center-text {
+  text-align: center;
+}
+.right-text {
+  text-align: right;
+}
+.add-recipe {
+  margin: 10px 0px 150px 0px;
+
 }

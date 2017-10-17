@@ -9,7 +9,8 @@ export default class Form extends Component {
     super();
 
     this.state = {
-      recipe: ''
+      recipe: '',
+      servings: 1
     }
   }
 
@@ -27,21 +28,29 @@ export default class Form extends Component {
   }
 
   _handleCalorieCount = (e) => {
-    this.props.handleCalorieCount(e.target.value);
+    let servings = e.target.value;
+    this.setState({
+      servings: servings
+    });
+    this.props.handleCalorieCount(servings);
   }
 
   render(){
-
     let nutritionInfo = this.props.state.nutrition.map((item, index) => {
       return <NutritionTable key={ index } item={ item } />
     });
+
+    let totalCalories = this.props.state.calories / this.props.state.servings;
+
     return (
       <div className="container">
         <div className="row col-md-8">
-          <form className="" onSubmit={ this._handleFormSubmit }>
-            <div className="form-group">
+          <form onSubmit={ this._handleFormSubmit }>
+            <div className="steps">
               <h1>Step 1</h1>
               <h4>Enter a recipe below</h4>
+            </div>
+            <div className="form-group">
               <textarea onChange={ this._handleChange } name="recipe" className="form-control" rows="10" value={ this.state.recipe }></textarea>
               <br/>
               <button disabled={ !this.state.recipe } type="submit" className="btn btn-default btn-lg">Calculate Foods</button>
@@ -59,9 +68,6 @@ export default class Form extends Component {
                     <th>Unit</th>
                     <th>Food</th>
                     <th>Weight</th>
-                    {/* <th>Total Fat</th>
-                    <th>Total Carbs</th>
-                    <th>Protein</th> */}
                     <th>Calories</th>
                   </tr>
                 </thead>
@@ -69,17 +75,31 @@ export default class Form extends Component {
                   { nutritionInfo }
                 </tbody>
               </table>
-              <div className="row">
-                <div className="col-md-1">
-                  <label>Servings</label>
+              <p className="to-gray">review nutrition information and make any neccesary changes</p>
+              <br/>
+              <div className="steps">
+                <h1>Step 2</h1>
+                <h4>Calculate serving size</h4>
+              </div>
+              <br/>
+              <div className="row step-two">
+                <div className="col-md-10">
+                  <h5>Servings</h5>
                 </div>
                 <div className="col-md-2">
-                  <input className="form-control" type="number" min="1" name="serving" onChange={ this._handleCalorieCount }/>
+                  <input defaultValue="1" className="form-control center-text" type="number" min="1" name="serving" onChange={ this._handleCalorieCount }/>
                 </div>
               </div>
-
+              <br/>
+              <div className="row step-two">
+                <div className="col-md-10">
+                  <h5 className="">Total Calories</h5>
+                </div>
+                <div className="col-md-2">
+                  <h5 className="center-text">{ totalCalories.toFixed([0]) }</h5>
+                </div>
+              </div>
             </div>
-
           : null }
         </div>
 

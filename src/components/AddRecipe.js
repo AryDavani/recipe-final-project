@@ -19,21 +19,23 @@ export default class AddRecipe extends Component {
     return(
       <div className="container">
         { this.props.state.render ?
-          <div>
-            <h1>Step 3</h1>
+          <div className="row col-md-8">
+            <div className="steps">
+              <h1>Step 3</h1>
+              <h4>Add Item to Menu</h4>
+            </div>
             <br/>
-            <form onSubmit={ this._handleRecipePost }>
+            <form className="add-recipe" onSubmit={ this._handleRecipePost }>
               <div className="row">
-                <div className="col-md-2">
+                <div className="col-md-8">
                   <input required type="text" className="form-control" name="recipe" placeholder="Name of Menu Item"/>
                 </div>
-                <div>
+                <div className="col-md-4 right-text">
                   <button type="submit" className="btn btn-default">Add To Menu</button>
                 </div>
               </div>
             </form>
           </div>
-
         : null }
       </div>
     )

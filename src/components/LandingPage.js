@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Info from './Info';
 import { NavLink } from 'react-router-dom';
+import Footer from './Footer';
 
 export default class LandingPage extends Component {
   render(){
@@ -18,8 +19,7 @@ export default class LandingPage extends Component {
             <button onClick={() => { this.props.history.push('/signup') }} className="btn btn-success btn-lg">Get Started!</button>
           </div>
         </div>
-        <div className="footer">
-        </div>
+        <Footer/>
       </div>
     )
   }

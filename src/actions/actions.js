@@ -5,7 +5,6 @@ export default function authRequired(ComposedComponent){
   console.log('auth required called');
   class Authentication extends Component{
     isLoggedIn(){
-      console.log('function running');
       let user = localStorage.getItem('user');
 
       if(!user){
@@ -14,7 +13,7 @@ export default function authRequired(ComposedComponent){
       }
 
       var currentUser = JSON.parse(user);
-      return currentUser.sessionToken;
+      return !!currentUser.sessionToken;
     }
 
     componentWillMount(){
@@ -23,7 +22,6 @@ export default function authRequired(ComposedComponent){
     }
 
     render(){
-      console.log('testing render return');
       return this.isLoggedIn() ? <ComposedComponent {...this.props} /> : null;
     }
   }
