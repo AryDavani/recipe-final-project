@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import AuthLayout from './AuthLayout';
+import PROJECT_URI from '../utility';
 
 
 export default class LoginForm extends Component {
@@ -49,7 +50,7 @@ export default class LoginForm extends Component {
               </form>
               <br/>
               <div>
-                <span>Don't have an account? <NavLink to='/signup'>Sign Up</NavLink></span>
+                <span>Don't have an account? <NavLink to={ PROJECT_URI + '/signup' }>Sign Up</NavLink></span>
               </div>
             </div>
           </div>
