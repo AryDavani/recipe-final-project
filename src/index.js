@@ -13,10 +13,12 @@ import BaseLayout from './components/BaseLayout';
 
 import authRequired from './actions/actions';
 
+const PROJECT_URI = '/recipe-final-project';
+
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route exact path='/' component={ LandingPage }/>
+      <Route exact path={PROJECT_URI + '/'} component={ LandingPage }/>
       <Route path='/home' component={ authRequired(FormContainer) }/>
       <Route path='/menu' component={ authRequired(MenuContainer) }/>
       <Route path='/signup' component={ SignupContainer }/>
