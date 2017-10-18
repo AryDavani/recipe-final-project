@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import LoginForm from '../components/LoginForm';
 import { PARSE_URL, PARSE_HEADERS } from '../parse';
-import PROJECT_URI from './utility';
+import PROJECT_URI from '../utility';
 
 let $ = window.$;
 

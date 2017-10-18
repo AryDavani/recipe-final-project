@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SignupForm from '../components/SignupForm';
 import { PARSE_URL, PARSE_HEADERS } from '../parse';
-import PROJECT_URI from './utility';
+import PROJECT_URI from '../utility';
 
 
 export default class SignupContainer extends Component {
