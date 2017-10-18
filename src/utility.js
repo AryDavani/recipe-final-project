@@ -1,1 +1,3 @@
-export default const PROJECT_URI = '/recipe-final-project';
+const PROJECT_URI = '/recipe-final-project';
+
+export default PROJECT_URI;
