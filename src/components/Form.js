@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
 import NutritionTable from './NutritionTable';
 import {NavLink} from 'react-router-dom';
 import {API_URL, API_HEADERS} from '../parse';
