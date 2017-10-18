@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PROJECT_URI from './utility';
+import PROJECT_URI from '../utility';
 
 export default function authRequired(ComposedComponent){
   console.log('auth required called');
