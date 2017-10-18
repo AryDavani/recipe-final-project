@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { authModalStyle } from '../styles/modal';
 import { NavLink } from 'react-router-dom';
 import AuthLayout from './AuthLayout';
 
