@@ -14,6 +14,8 @@ export default class AddRecipe extends Component {
     }
 
     this.props.handleRecipePost(recipe);
+
+    e.target.reset();
   }
 
   render(){

@@ -13,8 +13,8 @@ export default class Menu extends Component {
     });
 
     return (
-      <div className="container">
-        <h1>Menu</h1>
+      <div className="container menu">
+        <h1>Your Menu</h1>
         <br/>
         { menulist }
       </div>

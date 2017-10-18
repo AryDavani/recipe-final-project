@@ -75,9 +75,7 @@ html {
 .auth-forms h1 {
   text-align: center;
 }
-.menu-card {
-  background-color: #fff;
-}
+
 .info {
   box-shadow: 10px 10px 20px gray;
   margin: 5% 0%;
@@ -180,10 +178,14 @@ html {
   box-shadow: 3px 3px 10px black;
 }
 .menu-heading {
+  background-color: rgba(170, 170, 170, 0.3);
   padding: 0px 20px;
   display: flex;
   justify-content: space-between;
 }
 .menu-description {
   padding: 20px;
+}
+.menu {
+  margin-bottom: 100px;
 }
