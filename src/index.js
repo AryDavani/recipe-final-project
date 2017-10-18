@@ -12,8 +12,7 @@ import FormContainer from './container/FormContainer';
 import BaseLayout from './components/BaseLayout';
 
 import authRequired from './actions/actions';
-
-const PROJECT_URI = '/recipe-final-project';
+import PROJECT_URI from './utility';
 
 ReactDOM.render(
   <Router>

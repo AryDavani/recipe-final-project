@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PROJECT_URI from './utility';
 
 export default function authRequired(ComposedComponent){
   console.log('auth required called');
@@ -18,7 +18,7 @@ export default function authRequired(ComposedComponent){
 
     componentWillMount(){
       console.log('Is Logged In: ', this.isLoggedIn());
-      !this.isLoggedIn() ? this.props.history.push('/login') : null;
+      !this.isLoggedIn() ? this.props.history.push(PROJECT_URI + '/login') : null;
     }
 
     render(){

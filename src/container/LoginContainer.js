@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LoginForm from '../components/LoginForm';
 import { PARSE_URL, PARSE_HEADERS } from '../parse';
+import PROJECT_URI from './utility';
 
 let $ = window.$;
 
@@ -30,7 +31,7 @@ export default class LoginContainer extends Component {
       if (user.username) {
         // --- setting session token to header for new headers
         PARSE_HEADERS['X-Parse-Session-Token'] = user.sessionToken;
-        this.props.history.push('/home');
+        this.props.history.push(PROJECT_URI + '/home');
       } else {
         this.setState({errorMsg: user.error})
       }

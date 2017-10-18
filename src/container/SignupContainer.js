@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SignupForm from '../components/SignupForm';
 import { PARSE_URL, PARSE_HEADERS } from '../parse';
+import PROJECT_URI from './utility';
 
 
 export default class SignupContainer extends Component {
@@ -21,7 +22,7 @@ export default class SignupContainer extends Component {
     .then((user) => {
       console.log('user', user);
       localStorage.setItem('user', JSON.stringify(user));
-      this.props.history.push('/login');
+      this.props.history.push(PROJECT_URI + '/login');
     })
     .catch((err) => {
       console.log('error', err);
