@@ -10,7 +10,7 @@ export default class LandingPage extends Component {
       <div>
         <div className="background3">
           <div className="">
-            <h1 className="header">BiteSize</h1>
+            <h1 className="header">Bite-Size</h1>
             <i>Calculate your menu items!</i>
           </div>
         </div>

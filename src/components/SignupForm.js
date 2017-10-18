@@ -23,7 +23,6 @@ export default class SignupForm extends Component {
   }
 
   render(){
-    console.log('PROJECT URI', PROJECT_URI);
     return (
       <AuthLayout>
         <div className="center-flex">

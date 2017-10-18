@@ -9,7 +9,8 @@ export default class AddRecipe extends Component {
     e.preventDefault();
 
     let recipe = {
-      name: e.target.recipe.value
+      name: e.target.recipe.value,
+      description: e.target.description.value
     }
 
     this.props.handleRecipePost(recipe);
@@ -27,10 +28,17 @@ export default class AddRecipe extends Component {
             <br/>
             <form className="add-recipe" onSubmit={ this._handleRecipePost }>
               <div className="row">
-                <div className="col-md-8">
+                <div className="col-md-6">
                   <input required type="text" className="form-control" name="recipe" placeholder="Name of Menu Item"/>
                 </div>
-                <div className="col-md-4 right-text">
+              </div>
+              <div className="row">
+                <div className="col-md-8">
+                  <textarea rows="5" required type="text" className="form-control" name="description" placeholder="Description"/>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-8">
                   <button type="submit" className="btn btn-default">Add To Menu</button>
                 </div>
               </div>

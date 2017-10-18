@@ -59,7 +59,7 @@ export default class FormContainer extends Component {
     let totalCalories = this.state.calories / this.state.servings;
     item.recipe = this.state.recipe;
     item.calories = totalCalories;
-    item.servings = this.state.servings;
+    item.servings = parseInt(this.state.servings);
     item.owner = {
       "__type": "Pointer",
       "className": "_User",

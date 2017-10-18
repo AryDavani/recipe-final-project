@@ -10,6 +10,7 @@ html {
 .red {
   color: red;
 }
+
 .background {
   background-image: url("food1.jpg");
   background-size: cover;
@@ -102,7 +103,7 @@ html {
 .cards {
   display: flex;
   justify-content: space-between;
-
+  flex-wrap: wrap;
 }
 .cards div {
   display: flex;
@@ -116,7 +117,6 @@ html {
 }
 .cards div p {
   text-align: center;
-  width: 100%;
   font-weight: 300;
   font-size: 36px;
 }
@@ -172,5 +172,18 @@ html {
 }
 .add-recipe {
   margin: 10px 0px 150px 0px;
-
+}
+.menu-items {
+  margin: 15px 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  box-shadow: 3px 3px 10px black;
+}
+.menu-heading {
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.menu-description {
+  padding: 20px;
 }

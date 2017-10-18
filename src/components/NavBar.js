@@ -11,7 +11,7 @@ export default class Navbar extends Component {
   render(){
     return (
       <div className='navbar1'>
-        <NavLink to={ PROJECT_URI + '/home' }>Home</NavLink>
+        <NavLink to={ PROJECT_URI + '/home' }>Dashboard</NavLink>
         <NavLink to={ PROJECT_URI + '/menu' }>My Menu</NavLink>
         <NavLink to={ PROJECT_URI + '/' } onClick={() => {localStorage.clear()}}>Sign Out</NavLink>
       </div>
