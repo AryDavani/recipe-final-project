@@ -21,6 +21,7 @@ ReactDOM.render(
       <Route exact path={ PROJECT_URI + '/' } component={ LandingPage }/>
       <Route path={ PROJECT_URI + '/home' } component={ authRequired(Dashboard) }/>
       <Route path={ PROJECT_URI + '/menu' } component={ authRequired(MenuContainer) }/>
+      <Route path={ PROJECT_URI + '/form'} component={ FormContainer }/>
       <Route path={ PROJECT_URI + '/signup' } component={ SignupContainer }/>
       <Route path={ PROJECT_URI + '/login' } component={ LoginContainer }/>
     </Switch>

@@ -176,7 +176,14 @@ html {
   text-align: right;
 }
 .add-recipe {
-  margin: 10px 0px 150px 0px;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.empty-message {
+  padding: 100px;
+  display: flex;
+  justify-content: center;
 }
 .menu-items {
   margin: 15px 5px;

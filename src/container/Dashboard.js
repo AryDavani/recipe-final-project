@@ -3,6 +3,7 @@ import BaseLayout from '../components/BaseLayout';
 import Menu from '../components/Menu';
 import CrudList from '../components/CrudList';
 import {PARSE_URL, PARSE_HEADERS} from '../parse';
+import PROJECT_URI from '../utility';
 
 export default class Dashboard extends Component {
   constructor() {
@@ -38,18 +39,18 @@ export default class Dashboard extends Component {
     })
   }
 
-  _handleDelete = (item) => {
-    console.log('handle delete', item);
+  _handleDelete = (id) => {
 
-    // fetch(`${PARSE_URL}/classes/menuItems`, {
-    //   method: 'DELETE',
-    //   body: JSON.stringify(item),
-    //   headers: PARSE_HEADERS
-    // }).then((resp) => {
-    //   return resp.json();
-    // }).then((message) => {
-    //   console.log('message', message);
-    // });
+    console.log('state on dashboard on handledelete', this.state);
+
+    fetch(`${PARSE_URL}/classes/menuItems/` + id, {
+      method: 'DELETE',
+      headers: PARSE_HEADERS
+    }).then((resp) => {
+      return resp.json();
+    }).then((message) => {
+      console.log('message', message);
+    });
 
   }
 

@@ -76,6 +76,7 @@ export default class FormContainer extends Component {
     }).then((message) => {
       console.log('message', message);
     });
+    
   }
 
   render(){

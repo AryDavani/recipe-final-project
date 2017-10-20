@@ -8,7 +8,7 @@ export default class CrudItems extends Component {
 
   _handleDelete = () => {
     let itemId = this.props.item.objectId;
-    console.log('Delete clicked on', itemId);
+    console.log('Delete clicked on', this.props);
     this.props.handleDelete(itemId)
   }
   render(){
