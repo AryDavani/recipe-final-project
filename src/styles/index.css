@@ -10,7 +10,14 @@ html {
 .red {
   color: red;
 }
-
+.your-menu {
+  text-align: center;
+  font-size: 40px;
+}
+.no-menu-items {
+  text-align: center;
+  margin: 100px;
+}
 .background {
   background-image: url("food1.jpg");
   background-size: cover;
@@ -187,5 +194,11 @@ html {
   padding: 20px;
 }
 .menu {
-  margin-bottom: 100px;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-bottom: 110px;
+}
+.edit-delete-buttons {
+  display: flex;
+  justify-content: space-around;
 }
