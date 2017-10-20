@@ -5,23 +5,26 @@ export default class CrudItems extends Component {
     super();
   }
 
-
   _handleDelete = () => {
     let itemId = this.props.item.objectId;
-    console.log('Delete clicked on', this.props);
     this.props.handleDelete(itemId)
   }
+
+  _handleEdit = () => {
+    let item = this.props.item;
+    this.props.handleEdit(item);
+  }
+
   render(){
-    console.log('CrudItems props', this.props);
     return(
       <tr>
         <td scope="row" className="edit-delete-buttons">
-          <button className="btn btn-warning">Edit</button>
+          <button className="btn btn-warning" onClick={ this._handleEdit }>Edit</button>
           <button className="btn btn-danger" onClick={ this._handleDelete }>Delete</button>
         </td>
-        <td>{ this.props.item.name }</td>
-        <td>{ this.props.item.description }</td>
-        <td>{ this.props.item.calories.toFixed([0]) }</td>
+        <td className="center-text">{ this.props.item.name }</td>
+        <td className="">{ this.props.item.description }</td>
+        <td className="center-text">{ this.props.item.calories.toFixed([0]) }</td>
       </tr>
     )
   }

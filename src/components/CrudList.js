@@ -8,12 +8,16 @@ export default class CrudList extends Component {
   }
 
   _handleDelete = (item) => {
-    console.log('handle delete called', item);
     this.props.handleDelete(item);
   }
 
+  _handleEdit = (item) => {
+    this.props.handleEditPost(item);
+  }
+
+
   _newMenuItem = () => {
-    console.log('new menu item clicked');
+    this.props.newMenuItem();
   }
 
   render(){
@@ -21,14 +25,14 @@ export default class CrudList extends Component {
     console.log('CrudList props', this.props);
 
     let crudlist = this.props.menuItems.map((item, index) => {
-      return <CrudItems key={ index } item={ item } handleDelete={ this._handleDelete }/>
+      return <CrudItems key={ index } item={ item } handleDelete={ this._handleDelete } handleEdit={ this._handleEdit }/>
     });
 
     return (
       <div className="">
         <div className="row">
-          <div className="">
-            <h1 className="center-text">Dashboard</h1>
+          <div className="container">
+            <h1 className="jumbotron jumbotron-fluid">Dashboard</h1>
           </div>
         </div>
         <div className="add-recipe">
@@ -37,10 +41,10 @@ export default class CrudList extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th scope="col" className="col-md-2">Action</th>
-              <th scope="col" className="col-md-2">Item</th>
+              <th scope="col" className="col-md-2 center-text">Action</th>
+              <th scope="col" className="col-md-2 center-text">Title</th>
               <th scope="col" className="col-md-7">Description</th>
-              <th scope="col" className="col-md-1">Calories</th>
+              <th scope="col" className="col-md-1 center-text">Calories</th>
             </tr>
           </thead>
           <tbody>

@@ -12,6 +12,12 @@ export default class Form extends Component {
     }
   }
 
+  componentWillReceiveProps = (nextProps) => {
+    this.setState({
+      recipe: nextProps.data.recipe
+    })
+  }
+
   _handleFormSubmit = (e) => {
     e.preventDefault();
     let item = { query: this.state.recipe };
@@ -31,20 +37,29 @@ export default class Form extends Component {
   }
 
   render(){
-    let nutritionInfo = this.props.state.nutrition.map((item, index) => {
+    let nutritionInfo = this.props.data.nutrition.map((item, index) => {
       return <NutritionTable key={ index } item={ item } />
     });
 
-    let totalCalories = this.props.state.calories / this.props.state.servings;
+    let totalCalories = this.props.data.calories / this.props.data.servings;
+    console.log('FORM STATE', this.props);
 
     return (
       <div className="container">
         <div className="row col-md-8">
           <form onSubmit={ this._handleFormSubmit }>
-            <div className="steps">
-              <h1>Step 1</h1>
-              <h4>Enter a recipe below</h4>
-            </div>
+            { !this.props.data.idForEdit ?
+              <div className="steps">
+                <h1>Step 1</h1>
+                <h4>Enter a recipe below</h4>
+              </div> :
+              <div className="steps">
+                <h1>Edit Recipe</h1>
+              </div>
+            }
+
+            <p className="red">{ this.props.data.errorMsg }</p>
+
             <div className="form-group">
               <textarea onChange={ this._handleChange } name="recipe" className="form-control" rows="10" value={ this.state.recipe }></textarea>
               <br/>
@@ -53,7 +68,7 @@ export default class Form extends Component {
           </form>
         </div>
         <div className="row col-md-8">
-          { this.props.state.render ?
+          { this.props.data.render ?
             <div>
               <table className="table">
                 <thead>

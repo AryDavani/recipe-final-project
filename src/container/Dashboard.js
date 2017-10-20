@@ -15,7 +15,7 @@ export default class Dashboard extends Component {
     }
   }
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     let user = JSON.parse(localStorage.getItem('user'));
 
     this.setState({
@@ -48,17 +48,25 @@ export default class Dashboard extends Component {
       headers: PARSE_HEADERS
     }).then((resp) => {
       return resp.json();
-    }).then((message) => {
-      console.log('message', message);
+    }).then(() => {
+      this.componentDidMount();
     });
+  }
 
+  _newMenuItem = () => {
+    this.props.history.push(PROJECT_URI + '/home/form');
+  }
+
+  _handleEditPost = (item) => {
+    console.log('edit post recieved', item.objectId );
+    this.props.history.push(PROJECT_URI + '/home/edit/' + item.objectId);
   }
 
   render(){
     console.log('render state', this.state);
     return(
       <BaseLayout>
-        <CrudList menuItems={ this.state.menuItems } handleDelete={ this._handleDelete }/>
+        <CrudList menuItems={ this.state.menuItems } handleDelete={ this._handleDelete } newMenuItem={ this._newMenuItem } handleEditPost={ this._handleEditPost }/>
       </BaseLayout>
     )
   }

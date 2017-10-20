@@ -209,3 +209,6 @@ html {
   display: flex;
   justify-content: space-around;
 }
+.step-three {
+  margin-bottom: 100px;
+}
