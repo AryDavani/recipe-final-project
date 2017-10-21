@@ -4,7 +4,6 @@ import CrudItems from './CrudItems';
 export default class CrudList extends Component {
   constructor() {
     super();
-
   }
 
   _handleDelete = (item) => {
@@ -14,7 +13,6 @@ export default class CrudList extends Component {
   _handleEdit = (item) => {
     this.props.handleEditPost(item);
   }
-
 
   _newMenuItem = () => {
     this.props.newMenuItem();

@@ -40,6 +40,7 @@ export default class FormContainer extends Component {
         name: data.name,
         description: data.description,
         calories: data.calories.toFixed([0]),
+        servings: data.servings,
         recipe: data.recipe,
         nutrition: data.apiData.foods,
         apiData: data.apiData,

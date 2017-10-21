@@ -46,8 +46,29 @@ html {
   justify-content: center;
   align-items: center;
 }
+.user {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.user a {
+  color: #f7f0e2;
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px 20px;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+.user-icon {
+  color: #f7f0e2;
+}
+.navigation {
+  display: flex;
+  background-color: #02122C;
+}
 .navbar1 {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   background-color: #02122C;
