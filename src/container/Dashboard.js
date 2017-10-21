@@ -65,7 +65,7 @@ export default class Dashboard extends Component {
   render(){
     console.log('render state', this.state);
     return(
-      <BaseLayout data={ this.state }>
+      <BaseLayout>
         <CrudList menuItems={ this.state.menuItems } handleDelete={ this._handleDelete } newMenuItem={ this._newMenuItem } handleEditPost={ this._handleEditPost }/>
       </BaseLayout>
     )

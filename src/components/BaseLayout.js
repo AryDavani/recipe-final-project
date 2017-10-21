@@ -8,7 +8,7 @@ export default class BaseLayout extends Component {
     console.log('BASELAYOUT', this);
     return (
       <div>
-        <Navbar user={ this.props.data.user.firstname }/>
+        <Navbar/>
         { this.props.children }
         <Footer/>
       </div>

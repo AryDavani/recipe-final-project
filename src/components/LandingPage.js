@@ -17,7 +17,7 @@ export default class LandingPage extends Component {
         <div>
           <Info/>
           <div className="get-started">
-            <button onClick={() => { this.props.history.push(PROJECT_URI + '/signup') }} className="btn btn-success btn-lg">Get Started!</button>
+            <button onClick={() => { this.props.history.push(PROJECT_URI + '/login') }} className="btn btn-success btn-lg">Get Started!</button>
           </div>
         </div>
         <Footer/>

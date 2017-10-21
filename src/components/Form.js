@@ -32,6 +32,7 @@ export default class Form extends Component {
   }
 
   _handleCalorieCount = (e) => {
+
     let servings = e.target.value;
     this.props.handleCalorieCount(servings);
   }
@@ -41,8 +42,8 @@ export default class Form extends Component {
       return <NutritionTable key={ index } item={ item } />
     });
 
+    let editCalories = this.props.data.totalCals / this.props.data.servings;
     let totalCalories = this.props.data.calories / this.props.data.servings;
-    console.log('FORM STATE', this.props);
 
     return (
       <div className="container">
@@ -97,7 +98,7 @@ export default class Form extends Component {
                   <h5>Servings</h5>
                 </div>
                 <div className="col-md-2">
-                  <input defaultValue="1" className="form-control center-text" type="number" min="1" name="serving" onChange={ this._handleCalorieCount }/>
+                  <input value={ this.props.data.servings } className="form-control center-text" type="number" min="1" name="serving" onChange={ this._handleCalorieCount }/>
                 </div>
               </div>
               <br/>
@@ -106,7 +107,7 @@ export default class Form extends Component {
                   <h5 className="">Total Calories</h5>
                 </div>
                 <div className="col-md-2">
-                  <h5 className="center-text">{ totalCalories.toFixed([0]) }</h5>
+                  <h5 className="center-text">{ this.props.data.idForEdit ? editCalories.toFixed([0]) : totalCalories.toFixed([0]) }</h5>
                 </div>
               </div>
             </div>

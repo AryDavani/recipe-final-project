@@ -36,8 +36,13 @@ export default class FormContainer extends Component {
       return response.json();
     }).then((data) => {
       console.log('data from server', data);
+      let totalCals = 0;
+      data.apiData.foods.map((item) => {
+        totalCals += item.nf_calories;
+      });
       this.setState({
         name: data.name,
+        totalCals: totalCals.toFixed([0]),
         description: data.description,
         calories: data.calories.toFixed([0]),
         servings: data.servings,
@@ -72,6 +77,7 @@ export default class FormContainer extends Component {
       });
       this.setState({
         errorMsg: '',
+        totalCals: calories.toFixed([0]),
         calories: calories.toFixed([0]),
         recipe: item.query,
         nutrition: data.foods,
@@ -83,7 +89,6 @@ export default class FormContainer extends Component {
   }
 
   _handleCalorieCount = (num) =>{
-    console.log('NUMBER', num);
     this.setState({
       servings: num
     });
@@ -92,7 +97,7 @@ export default class FormContainer extends Component {
   _handleRecipePost = (item) => {
     // Post to Parse Server of new item
 
-    let totalCalories = this.state.calories / this.state.servings;
+    let totalCalories = this.state.totalCals / this.state.servings;
     item.recipe = this.state.recipe;
     item.calories = totalCalories;
     item.servings = parseInt(this.state.servings);
