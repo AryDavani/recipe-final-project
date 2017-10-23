@@ -15,7 +15,7 @@ export default class SignupForm extends Component {
     let user = {};
 
     user.firstname = e.target.firstname.value;
-    user.lastname = e.target.lastname.value;
+    user.lastname = e.target.restaurant.value;
     user.username = e.target.email.value;
     user.password = e.target.password.value;
 
@@ -37,8 +37,8 @@ export default class SignupForm extends Component {
                     <input required type="text" className="form-control" name="firstname" placeholder="First name" />
                   </div>
                   <div className="form-group col-md-6">
-                    <label>Last name</label>
-                    <input required type="text" className="form-control" name="lastname" placeholder="Last name" />
+                    <label>Restaurant</label>
+                    <input required type="text" className="form-control" name="restaurant" placeholder="Restaurant name" />
                   </div>
                 </div>
                 <div className="row">
