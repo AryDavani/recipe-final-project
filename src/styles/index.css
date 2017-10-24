@@ -165,10 +165,12 @@ html {
   background-color: #dddbdb;
   padding: 2% 5%;
 }
-
+.icons {
+  font-size: 130px;
+}
 .header {
   /*color: #dfb500;*/
-  font-size: 80px;
+  font-size: 70px;
   text-shadow: 1px 1px 1px #000;
   font-weight: 300;
   margin: 0;
@@ -185,17 +187,23 @@ html {
 }
 .cards div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 10px 10px 20px gray;
+  /*box-shadow: 10px 10px 20px gray;*/
   flex-basis: 30%;
   height: 300px;
-  background-color: #dddbdb;
+  /*background-color: #dddbdb;*/
 }
 .cards div p {
+  padding: 20px 0px;
   text-align: center;
   font-weight: 300;
-  font-size: 36px;
+  font-size: 30px;
+}
+.cards div img {
+  width: 200px;
+  height: 200px;
 }
 .banner {
   color: rgb(222, 222, 222);
