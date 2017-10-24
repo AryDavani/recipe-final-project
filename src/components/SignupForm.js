@@ -56,7 +56,7 @@ export default class SignupForm extends Component {
               </form>
               <br/>
               <div>
-                <span>Already have an account? <NavLink to={ PROJECT_URI + '/login' }>Log in</NavLink></span>
+                <span>Already have an account? <NavLink to={ PROJECT_URI + '/login' }>Login</NavLink></span>
               </div>
             </div>
           </div>

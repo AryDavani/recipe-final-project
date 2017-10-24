@@ -3,11 +3,13 @@ import Info from './Info';
 import { NavLink } from 'react-router-dom';
 import Footer from './Footer';
 import PROJECT_URI from '../utility';
+import LandingPageNavbar from './LandingPageNavbar';
 
 export default class LandingPage extends Component {
   render(){
     return(
       <div>
+        <LandingPageNavbar />
         <div className="background3">
           <div className="">
             <h1 className="header">Bite-Size</h1>

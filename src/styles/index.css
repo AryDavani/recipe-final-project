@@ -35,8 +35,16 @@ html {
   width: 100vw;
 }
 .background3 {
-  background-color: #02122C;
-  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: #02122C;*/
+  /*background: linear-gradient(to right, #02122C , #0241a7);*/
+  background-image: url("food1.jpg");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
   text-align: center;
   color: #fff;
 }
@@ -84,6 +92,21 @@ html {
 .navigation {
   display: flex;
   background-color: #02122C;
+}
+.landing-nav {
+  padding: 10px;
+  /*height: 60px;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.landing-nav p {
+  padding: 3px;
+  color: #02122C;
+  font-size: 40px;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 2px;
+  margin: 0;
 }
 .navbar1 {
   width: 100%;
