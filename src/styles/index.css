@@ -198,6 +198,7 @@ html {
   font-size: 36px;
 }
 .banner {
+  color: rgb(222, 222, 222);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,10 +208,12 @@ html {
   background-color: rgba(15, 15, 15, 0.6);
 }
 .banner button {
-  margin: 100px;
+  margin: 80px;
   width: 30%;
 }
 .banner h4 {
+  font-weight: 300;
+  color: rgb(213, 208, 208);
   text-shadow: 1px 1px 1px #000;
 }
 .get-started {
