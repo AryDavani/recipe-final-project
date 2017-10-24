@@ -38,6 +38,7 @@ html {
 .background3 {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   /*background-color: #02122C;*/
   /*background: linear-gradient(to right, #02122C , #0241a7);*/
@@ -45,7 +46,7 @@ html {
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 90vh;
+  height: 100vh;
   text-align: center;
   color: #fff;
 }
@@ -95,14 +96,15 @@ html {
   background-color: #02122C;
 }
 .landing-nav {
+  background-color: rgba(15, 15, 15, 0.6);
+  width: 100%;
   padding: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
 }
 .landing-nav p {
   padding: 3px;
-  color: #02122C;
   font-size: 40px;
   font-family: 'Amatic SC', cursive;
   letter-spacing: 2px;
@@ -112,14 +114,20 @@ html {
   margin: 2px;
   padding: 3px 5px;
   text-decoration: none;
-  color: #02122C;
-  font-size: 20px;
+  color: #f7f0e2;
+  font-size: 24px;
   font-variant: small-caps;
   letter-spacing: 2px;
+  font-weight: 300;
+
 }
 .landing-nav a:hover {
-  border: 1px solid #02122C;
-  margin: 1px;
+  text-decoration: underline;
+}
+.title {
+  color: rgb(223, 181, 0);
+  font-family: 'Amatic SC', cursive;
+  font-size: 120px;
 }
 .navbar1 {
   width: 100%;
@@ -169,11 +177,10 @@ html {
   font-size: 130px;
 }
 .header {
-  /*color: #dfb500;*/
   font-size: 70px;
   text-shadow: 1px 1px 1px #000;
   font-weight: 300;
-  margin: 0;
+  margin-top: 20px;
   padding: 30px;
 }
 .get-started {
@@ -181,6 +188,7 @@ html {
   margin-bottom: 100px;
 }
 .cards {
+  margin-top: 100px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
