@@ -11,6 +11,7 @@ import SignupContainer from './container/SignupContainer';
 import LoginContainer from './container/LoginContainer';
 import FormContainer from './container/FormContainer';
 import Dashboard from './container/Dashboard';
+import Help from './components/Help';
 
 import authRequired from './actions/actions';
 import PROJECT_URI from './utility';
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Switch>
       <Route exact path={ PROJECT_URI + '/' } component={ LandingPage }/>
       <Route path={ PROJECT_URI + '/home/form'} component={ FormContainer }/>
+      <Route path={ PROJECT_URI + '/home/help'} component={ Help }/>
       <Route path={ PROJECT_URI + '/home/edit/:objectId'} component={ FormContainer }/>
       <Route path={ PROJECT_URI + '/home' } component={ authRequired(Dashboard) }/>
       <Route path={ PROJECT_URI + '/menu' } component={ authRequired(MenuContainer) }/>
