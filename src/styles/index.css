@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Helvetica';
 }
 html {
   position: relative;
@@ -95,7 +96,6 @@ html {
 }
 .landing-nav {
   padding: 10px;
-  /*height: 60px;*/
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -107,6 +107,19 @@ html {
   font-family: 'Amatic SC', cursive;
   letter-spacing: 2px;
   margin: 0;
+}
+.landing-nav a {
+  margin: 2px;
+  padding: 3px 5px;
+  text-decoration: none;
+  color: #02122C;
+  font-size: 20px;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+.landing-nav a:hover {
+  border: 1px solid #02122C;
+  margin: 1px;
 }
 .navbar1 {
   width: 100%;
@@ -148,18 +161,16 @@ html {
 .info {
   box-shadow: 10px 10px 20px gray;
   margin: 5% 0%;
-  border-radius: 5px;
   color: #000;
   background-color: #dddbdb;
   padding: 2% 5%;
 }
 
 .header {
-  color: rgb(255, 230, 0);
-  font-size: 100px;
-  font-family: 'Amatic SC', cursive;
-  font-weight: lighter;
-  letter-spacing: 2px;
+  /*color: #dfb500;*/
+  font-size: 80px;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: 300;
   margin: 0;
   padding: 30px;
 }
@@ -180,14 +191,28 @@ html {
   flex-basis: 30%;
   height: 300px;
   background-color: #dddbdb;
-  border-radius: 5px;
 }
 .cards div p {
   text-align: center;
   font-weight: 300;
   font-size: 36px;
 }
-
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.6);
+}
+.banner button {
+  margin: 100px;
+  width: 30%;
+}
+.banner h4 {
+  text-shadow: 1px 1px 1px #000;
+}
 .get-started {
   align-items: center;
   padding: 50px;

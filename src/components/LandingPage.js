@@ -11,15 +11,16 @@ export default class LandingPage extends Component {
       <div>
         <LandingPageNavbar />
         <div className="background3">
-          <div className="">
-            <h1 className="header">Bite-Size</h1>
-            <i>Calculate your menu items!</i>
+          <div className="banner">
+            <i className="header">Calculate your menu items.</i>
+            <h4>Data-Bites makes it easy for restuarants to calculate calorie information for their menu items.</h4>
+            <button onClick={() => { this.props.history.push(PROJECT_URI + '/signup') }} className="btn btn-success btn-lg">Sign Up Now!</button>
           </div>
         </div>
         <div>
           <Info/>
           <div className="get-started">
-            <button onClick={() => { this.props.history.push(PROJECT_URI + '/login') }} className="btn btn-success btn-lg">Get Started!</button>
+            <button onClick={() => { this.props.history.push(PROJECT_URI + '/signup') }} className="btn btn-success btn-lg">Get Started!</button>
           </div>
         </div>
         <Footer/>
