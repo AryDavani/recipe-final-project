@@ -8,7 +8,6 @@ export default class LandingPage extends Component {
   render(){
     return(
       <div>
-        {/* <LandingPageNavbar /> */}
         <div className="background3">
           <div className="landing-nav">
             <NavLink to={ PROJECT_URI + '/login' }>Login</NavLink>
