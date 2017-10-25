@@ -28,11 +28,6 @@ export default class CrudList extends Component {
 
     return (
       <div className="">
-        <div className="">
-          <div className="container">
-            <h1 className="jumbotron">Dashboard</h1>
-          </div>
-        </div>
         <div className="add-recipe">
           <button className="btn btn-primary" onClick={ this._newMenuItem }>New Menu Item</button>
         </div>
