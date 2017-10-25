@@ -16,15 +16,15 @@ export default class Info extends Component {
         </div>
         <div className="cards">
           <div>
-            <img src="/images/pins.png"/>
+            <img src={require("../images/pins.png")}/>
             <p>Add Ingredients</p>
           </div>
           <div>
-            <img src="/images/label2.png"/>
+            <img src={require("../images/label2.png")}/>
             <p>Get Nutrition</p>
           </div>
           <div>
-            <img src="/images/plate.png"/>
+            <img src={require("../images/plate.png")}/>
             <p>Calculate Servings</p>
           </div>
         </div>

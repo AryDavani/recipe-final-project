@@ -15,7 +15,7 @@ export default class LandingPage extends Component {
           <div className="banner">
             <p className="title">Bite-Size</p>
             <p className="header">Calculate your menu items.</p>
-            <h4>Data-Bites makes it easy for restuarants to calculate calorie information for their menu items.</h4>
+            <h4>Bite-Size makes it easy for restuarants to calculate calorie information for their menu items.</h4>
             <button onClick={() => { this.props.history.push(PROJECT_URI + '/signup') }} className="btn btn-success btn-lg">Sign Up Now!</button>
             <i className="fa fa-chevron-down fa-2x"></i>
           </div>
