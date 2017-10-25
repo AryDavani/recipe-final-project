@@ -11,6 +11,7 @@ export default class FormContainer extends Component {
     super(props);
 
     this.state = {
+      totals: {},
       recipe: '',
       name: '',
       calories: 0,
@@ -40,6 +41,7 @@ export default class FormContainer extends Component {
       data.apiData.foods.map((item) => {
         totalCals += item.nf_calories;
       });
+
       this.setState({
         name: data.name,
         totalCals: totalCals.toFixed([0]),
@@ -71,11 +73,32 @@ export default class FormContainer extends Component {
         });
         return;
       }
+      console.log('data from api fetch', data.foods);
       let calories = 0;
+      let totals = {};
       data.foods.map((item) => {
+        totals.calories += item.nf_calories;
+        totals.totalFat += item.nf_total_fat;
+        totals.saturatedFat += item.nf_saturated_fat;
+        totals.transFat += item.full_nutrients[69].value;
+        totals.polyunsaturatedFat += item.full_nutrients[94].value;
+        totals.monounsaturatedFat += item.full_nutrients[93].value;
+        totals.cholesterol += item.nf_cholesterol;
+        totals.sodium += item.nf_sodium;
+        totals.potassium += item.nf_potassium;
+        totals.totalCarbs += item.nf_total_carbohydrate;
+        totals.fiber += item.nf_dietary_fiber;
+        totals.sugars += item.nf_sugars;
+        totals.protein += item.nf_protein;
+        totals.vitaminA += item.full_nutrients[22].value;
+        totals.vitaminC += item.full_nutrients[41].value;
+        totals.calcium += item.full_nutrients[12].value;
+        totals.iron += item.full_nutrients[13].value;
         calories += item.nf_calories;
       });
+      console.log('TOTALS', totals);
       this.setState({
+        // totals: totals,
         errorMsg: '',
         totalCals: calories.toFixed([0]),
         calories: calories.toFixed([0]),
@@ -96,8 +119,9 @@ export default class FormContainer extends Component {
 
   _handleRecipePost = (item) => {
     // Post to Parse Server of new item
-
+    console.log('before post ASDFASDFASDF', this.state);
     let totalCalories = this.state.totalCals / this.state.servings;
+    // item.totals = this.state.totals;
     item.recipe = this.state.recipe;
     item.calories = totalCalories;
     item.servings = parseInt(this.state.servings);
@@ -122,9 +146,6 @@ export default class FormContainer extends Component {
     });
   }
 
-  _handleEditPost = (item) => {
-    console.log('EDIT RECEIVED', item);
-  }
 
   render(){
     console.log('does this reachhhhhhh??????', this);

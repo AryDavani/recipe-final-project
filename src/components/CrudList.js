@@ -20,8 +20,6 @@ export default class CrudList extends Component {
 
   render(){
 
-    console.log('CrudList props', this.props);
-
     let crudlist = this.props.menuItems.map((item, index) => {
       return <CrudItems key={ index } item={ item } handleDelete={ this._handleDelete } handleEdit={ this._handleEdit }/>
     });
@@ -31,20 +29,21 @@ export default class CrudList extends Component {
         <div className="add-recipe">
           <button className="btn btn-primary" onClick={ this._newMenuItem }>New Menu Item</button>
         </div>
-        <table className="crud-table table table-striped">
-          <thead>
-            <tr>
-              <th scope="col" className="col-md-2 center-text">Action</th>
-              <th scope="col" className="col-md-2 center-text">Title</th>
-              <th scope="col" className="col-md-7">Description</th>
-              <th scope="col" className="col-md-1 center-text">Calories</th>
-            </tr>
-          </thead>
-          <tbody>
-            { crudlist }
-          </tbody>
-        </table>
-        { this.props.menuItems.length ? null :
+        { this.props.menuItems.length ?
+          <table className="crud-table table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" className="col-md-2 center-text">Action</th>
+                <th scope="col" className="col-md-2 center-text">Title</th>
+                <th scope="col" className="col-md-7">Description</th>
+                <th scope="col" className="col-md-1 center-text">Calories</th>
+              </tr>
+            </thead>
+            <tbody>
+              { crudlist }
+            </tbody>
+          </table>
+           :
           <div className="empty-message">
             <h4>There's nothing here. Click "New Menu Item" to begin.</h4>
           </div>

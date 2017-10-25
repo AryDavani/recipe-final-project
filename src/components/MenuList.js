@@ -8,7 +8,6 @@ export default class MenuList extends Component {
     super();
   }
   render(){
-    console.log('menu list', this.props);
     return(
       <div className="container">
         <div className="menu-items">
