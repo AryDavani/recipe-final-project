@@ -24,13 +24,11 @@ export default class Macros extends Component {
   }
 
   render(){
-    console.log('macros state', this.state);
     return (
       <div className="nutrition-label-outer">
-        <h1>{this.state.data.name}</h1>
         <div className="nutrition-label">
           <div className="nutrition-title">Nutrition Facts</div>
-          {/* <div className="nutrition-recipe"> {this.state.data.name}</div> */}
+          <div className="nutrition-recipe">{this.state.data.name}</div>
           <div className="nutrition-line nutrition-line-big"></div>
           <div className="nutrition-serving">Amount Per Serving</div>
           <div className="nutrition-item">
@@ -42,7 +40,7 @@ export default class Macros extends Component {
             <span className="nutrition-percentage"><strong>% Daily Value*</strong></span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Total Fat</strong> 9g</span>
+            <span className="nutrition-main"><strong>Total Fat</strong>9g</span>
             <span className="nutrition-percentage"><strong>14%</strong></span>
           </div>
           <div className="nutrition-sub-item">
@@ -56,15 +54,15 @@ export default class Macros extends Component {
             <span className="nutrition-sub">Monounsaturated Fat 1g</span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Cholesterol</strong> 21mg</span>
+            <span className="nutrition-main"><strong>Cholesterol</strong>21mg</span>
             <span className="nutrition-percentage"><strong>7%</strong></span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Sodium</strong> 56mg</span>
+            <span className="nutrition-main"><strong>Sodium</strong>56mg</span>
             <span className="nutrition-percentage"><strong>2%</strong></span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Potassium</strong> 8mg</span>
+            <span className="nutrition-main"><strong>Potassium</strong>8mg</span>
             <span className="nutrition-percentage"><strong>0%</strong></span>
           </div>
           <div className="nutrition-item">
@@ -75,7 +73,7 @@ export default class Macros extends Component {
             <span className="nutrition-sub">Sugars 1g</span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Protein</strong> 1g</span>
+            <span className="nutrition-main"><strong>Protein</strong>1g</span>
             <span className="nutrition-percentage"><strong>2%</strong></span>
           </div>
           <div className="nutrition-line nutrition-line-big"></div>
@@ -90,6 +88,10 @@ export default class Macros extends Component {
           <div className="nutrition-item">
             <span className="nutrition-main">Calcium</span>
             <span className="nutrition-percentage">2%</span>
+          </div>
+          <div className="nutrition-item">
+            <span className="nutrition-main">Iron</span>
+            <span className="nutrition-percentage">6%</span>
           </div>
           <div className="nutrition-warning">
             * Percent Daily Values are based on a 2000 calorie diet.
