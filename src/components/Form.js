@@ -90,7 +90,7 @@ export default class Form extends Component {
               <br/>
               <div className="steps">
                 <h1>Step 2</h1>
-                <h4>Calculate serving size</h4>
+                <h4>Calculate calories</h4>
               </div>
               <br/>
               <div className="row step-two">
@@ -104,7 +104,7 @@ export default class Form extends Component {
               <br/>
               <div className="row step-two">
                 <div className="col-md-10">
-                  <h5 className="">Total Calories</h5>
+                  <h5 className="">Calories per serving</h5>
                 </div>
                 <div className="col-md-2">
                   <h5 className="center-text">{ this.props.data.idForEdit ? editCalories.toFixed([0]) : totalCalories.toFixed([0]) }</h5>

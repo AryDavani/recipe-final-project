@@ -40,8 +40,6 @@ html {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /*background-color: #02122C;*/
-  /*background: linear-gradient(to right, #02122C , #0241a7);*/
   background-image: url("food1.jpg");
   background-position: left;
   background-size: cover;
@@ -69,9 +67,11 @@ html {
   text-decoration: none;
   font-size: 20px;
   margin: 10px 20px;
-  font-variant: small-caps;
-  letter-spacing: 2px;
 }
+.nav-options a:hover {
+  color: rgb(223, 181, 0);
+}
+
 .user {
   width: 100%;
   padding-left: 20px;
@@ -85,8 +85,6 @@ html {
   text-decoration: none;
   font-size: 22px;
   margin: 10px 20px;
-  font-variant: small-caps;
-  letter-spacing: 2px;
 }
 .user-icon {
   color: #f7f0e2;
@@ -98,7 +96,7 @@ html {
 .landing-nav {
   background-color: rgba(15, 15, 15, 0.6);
   width: 100%;
-  padding: 10px;
+  padding: 10px 40px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -106,7 +104,6 @@ html {
 .landing-nav p {
   padding: 3px;
   font-size: 40px;
-  font-family: 'Amatic SC', cursive;
   letter-spacing: 2px;
   margin: 0;
 }
@@ -115,12 +112,11 @@ html {
   padding: 3px 5px;
   text-decoration: none;
   color: #f7f0e2;
-  font-size: 24px;
-  font-variant: small-caps;
-  letter-spacing: 2px;
-  font-weight: 300;
-
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
 }
+
 .landing-nav a:hover {
   text-decoration: underline;
 }
@@ -141,8 +137,6 @@ html {
   margin: 20px 40px;
   color: #f7f0e2;
   font-size: 24px;
-  font-variant: small-caps;
-  letter-spacing: 2px;
 }
 .navbar1 a:hover {
   color: rgb(223, 181, 0);
@@ -317,4 +311,84 @@ html {
 }
 .step-three {
   margin-bottom: 100px;
+}
+
+/****************************** NUTRITION LABEL ****************************/
+.nutrition-label-outer {
+  background-image: url("label.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.nutrition-label-outer h1 {
+  text-align: center;
+  width: 100%;
+  color: #000;
+  margin-left: 20%;
+  margin-top: -100px;
+  margin-bottom: 50px;
+}
+.nutrition-label {
+  margin-left: 20%;
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif ;
+	width: 350px;
+	border: solid black 1px;
+	padding: 10px;
+}
+
+.nutrition-title {
+	font-weight: bold;
+	font-size: 2.5em;
+}
+
+.nutrition-recipe {
+	font-size: 1.1em
+}
+
+.nutrition-line {
+	background-color: black;
+	height: 5px;
+	margin-top: 2px
+}
+
+.nutrition-line-big {
+	height: 10px;
+}
+
+.nutrition-item {
+	border-top: 1px solid black;
+	font-size: 1em;
+	display: flex;
+	width: 100%;
+}
+
+.nutrition-sub-item {
+	border-top: 1px solid black;
+	font-size: 1em;
+	margin-left: 5%;
+	width: 95%;
+}
+
+.nutrition-main {
+	width: 100%;
+	text-align: left;
+}
+
+.nutrition-percentage {
+	width: 100%;
+	text-align: right;
+}
+
+.nutrition-warning {
+  margin-top: 5px;
+	color: #aaaaaa;
+	font-size: .8em;
 }
