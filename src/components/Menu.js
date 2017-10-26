@@ -39,7 +39,9 @@ export default class Menu extends Component {
               </select>
             </div>
           </div> :
-          <h1 className="no-menu-items">There's nothing here</h1>
+          <div>
+            <h4 className="empty-message">There are no menu items to display.</h4>
+          </div>
         }
         <br/>
         { menulist }
