@@ -44,7 +44,7 @@ export default class Macros extends Component {
           </div>
           <div className="nutrition-line"></div>
           <div className="nutrition-item">
-            <span className="nutrition-percentage"><strong>% Daily Value*</strong></span>
+            <span className="nutrition-daily"><strong>% Daily Value*</strong></span>
           </div>
           <div className="nutrition-item">
             <span className="nutrition-main"><strong>Total Fat</strong>{this.state.nutritionInfo.totalFat}g</span>

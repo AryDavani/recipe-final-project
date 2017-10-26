@@ -20,7 +20,7 @@ html {
   margin: 100px;
 }
 .background {
-  background-image: url("food1.jpg");
+  background-image: url("rsz_food1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -392,8 +392,13 @@ html {
 }
 
 .nutrition-percentage {
-	width: 100%;
+	width: 80%;
 	text-align: right;
+}
+
+.nutrition-daily {
+  width: 100%;
+  text-align: right;
 }
 
 .nutrition-warning {

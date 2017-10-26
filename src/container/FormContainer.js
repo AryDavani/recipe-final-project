@@ -68,42 +68,17 @@ export default class FormContainer extends Component {
     }).then(response => {
       return response.json();
     }).then(data => {
+
       if (data.message) {
         this.setState({
           errorMsg: data.message
         });
         return;
       }
-      console.log('data from api fetch', data.foods);
-      let calories = 0;
-      let totals = new NutritionInfo;
-      console.log('totals', totals);
-      data.foods.map((item) => {
-        totals.calories += item.nf_calories;
-        totals.totalFat += item.nf_total_fat;
-        totals.saturatedFat += item.nf_saturated_fat;
-        totals.transFat += item.full_nutrients.find((item) => { return item.attr_id === 605 }).value;
-        totals.polyunsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 646 }).value;
-        totals.monounsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 645 }).value;
-        totals.cholesterol += item.nf_cholesterol;
-        totals.sodium += item.nf_sodium;
-        totals.potassium += item.nf_potassium;
-        totals.totalCarbs += item.nf_total_carbohydrate;
-        totals.fiber += item.nf_dietary_fiber;
-        totals.sugars += item.nf_sugars;
-        totals.protein += item.nf_protein;
-        totals.vitaminA += item.full_nutrients.find((item) => { return item.attr_id === 318 }).value;
-        totals.vitaminC += item.full_nutrients.find((item) => { return item.attr_id === 401 }).value;
-        totals.calcium += item.full_nutrients.find((item) => { return item.attr_id === 301 }).value;
-        totals.iron += item.full_nutrients.find((item) => { return item.attr_id === 303 }).value;
-        calories += item.nf_calories;
-      });
-      console.log('data from api fetch after instatiation: TOTALS', totals);
+      this._handleNutritionCalc(data);
+
       this.setState({
-        totals: totals,
         errorMsg: '',
-        totalCals: calories.toFixed([0]),
-        calories: calories.toFixed([0]),
         recipe: item.query,
         nutrition: data.foods,
         render: true,
@@ -131,7 +106,6 @@ export default class FormContainer extends Component {
       "className": "_User",
       "objectId": this.state.user.objectId
     };
-    console.log('item before post', item);
 
     let urlSuffix = this.state.idForEdit ? `/${this.state.idForEdit}` : '';
     let method = this.state.idForEdit ? 'PUT' : 'POST';
@@ -145,6 +119,38 @@ export default class FormContainer extends Component {
     }).then(() => {
       this.props.history.push(PROJECT_URI + '/home');
     });
+  }
+
+  _handleNutritionCalc = (data) => {
+    let calories = 0;
+    let totals = new NutritionInfo();
+
+    data.foods.map((item) => {
+      totals.calories += item.nf_calories;
+      totals.totalFat += item.nf_total_fat;
+      totals.saturatedFat += item.nf_saturated_fat;
+      totals.transFat += item.full_nutrients.find((item) => { return item.attr_id === 605 }).value;
+      totals.polyunsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 646 }).value;
+      totals.monounsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 645 }).value;
+      totals.cholesterol += item.nf_cholesterol;
+      totals.sodium += item.nf_sodium;
+      totals.potassium += item.nf_potassium;
+      totals.totalCarbs += item.nf_total_carbohydrate;
+      totals.fiber += item.nf_dietary_fiber;
+      totals.sugars += item.nf_sugars;
+      totals.protein += item.nf_protein;
+      totals.vitaminA += item.full_nutrients.find((item) => { return item.attr_id === 318 }).value;
+      totals.vitaminC += item.full_nutrients.find((item) => { return item.attr_id === 401 }).value;
+      totals.calcium += item.full_nutrients.find((item) => { return item.attr_id === 301 }).value;
+      totals.iron += item.full_nutrients.find((item) => { return item.attr_id === 303 }).value;
+      calories += item.nf_calories;
+    });
+
+    this.setState({
+      totals: totals,
+      totalCals: calories.toFixed(),
+      calories: calories.toFixed()
+    })
   }
 
 
