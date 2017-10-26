@@ -15,7 +15,6 @@ export default class Menu extends Component {
   }
 
   render(){
-    console.log('menu component', this.props.menuItems.length);
     let menulist = this.props.menuItems.map((item, index) => {
       return <MenuList key={ index } item={ item } />
     });
@@ -23,9 +22,6 @@ export default class Menu extends Component {
     return (
       <div className="container menu">
         <div className="row">
-          <div>
-            {/* <h1 className="your-menu">Your Menu</h1> */}
-          </div>
         </div>
         { this.props.menuItems.length ?
           <div className="row">

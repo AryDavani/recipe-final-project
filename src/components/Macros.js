@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {PARSE_URL, PARSE_HEADERS} from '../parse';
+import NutritionInfo from '../models/nutrition';
 
 
 export default class Macros extends Component {
@@ -7,7 +8,8 @@ export default class Macros extends Component {
     super();
 
     this.state = {
-      data: {}
+      nutritionInfo: new NutritionInfo,
+      name: ''
     }
   }
 
@@ -17,23 +19,27 @@ export default class Macros extends Component {
     }).then((resp) => {
       return resp.json();
     }).then((data) => {
+      console.log('DATATATATATFROMSERVER', data);
+
+      let nutritionInfo = new NutritionInfo(data.totals);
       this.setState({
-        data: data
+        nutritionInfo: nutritionInfo,
+        name: data.name
       })
     });
   }
 
   render(){
-    console.log("Macros", this.state.data);
+    console.log("Macros", this.state);
     return (
       <div className="nutrition-label-outer">
         <div className="nutrition-label">
           <div className="nutrition-title">Nutrition Facts</div>
-          <div className="nutrition-recipe">{this.state.data.name}</div>
+          <div className="nutrition-recipe">{this.state.name}</div>
           <div className="nutrition-line nutrition-line-big"></div>
           <div className="nutrition-serving">Amount Per Serving</div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Calories</strong>{this.state.data.calories}</span>
+            <span className="nutrition-main"><strong>Calories</strong>{this.state.nutritionInfo.calories}</span>
             <span className="nutrition-percentage">Calories from Fat 81</span>
           </div>
           <div className="nutrition-line"></div>

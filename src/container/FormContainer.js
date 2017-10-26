@@ -5,6 +5,7 @@ import {API_URL, API_HEADERS, PARSE_URL, PARSE_HEADERS} from '../parse';
 import BaseLayout from '../components/BaseLayout';
 import AddRecipe from '../components/AddRecipe';
 import PROJECT_URI from '../utility';
+import NutritionInfo from '../models/nutrition';
 
 export default class FormContainer extends Component {
   constructor(props){
@@ -75,32 +76,14 @@ export default class FormContainer extends Component {
       }
       console.log('data from api fetch', data.foods);
       let calories = 0;
-      let totals = {
-        calories: 0,
-        totalFat: 0,
-        saturatedFat: 0,
-        // transFat: 0,
-        // polyunsaturatedFat: 0,
-        // monounsaturatedFat: 0,
-        cholesterol: 0,
-        sodium: 0,
-        potassium: 0,
-        totalCarbs: 0,
-        fiber: 0,
-        sugars: 0,
-        protein: 0,
-        vitaminA: 0,
-        vitaminC: 0,
-        calcium: 0,
-        iron: 0
-      };
+      let totals = new NutritionInfo;
       data.foods.map((item) => {
         totals.calories += item.nf_calories;
         totals.totalFat += item.nf_total_fat;
         totals.saturatedFat += item.nf_saturated_fat;
-        // totals.transFat += item.full_nutrients[82].value;
-        // totals.polyunsaturatedFat += item.full_nutrients[94].value;
-        // totals.monounsaturatedFat += item.full_nutrients[93].value;
+        totals.transFat += item.full_nutrients.find((item) => { return item.attr_id === 605 }).value;
+        totals.polyunsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 646 }).value;
+        totals.monounsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 645 }).value;
         totals.cholesterol += item.nf_cholesterol;
         totals.sodium += item.nf_sodium;
         totals.potassium += item.nf_potassium;
@@ -108,10 +91,10 @@ export default class FormContainer extends Component {
         totals.fiber += item.nf_dietary_fiber;
         totals.sugars += item.nf_sugars;
         totals.protein += item.nf_protein;
-        totals.vitaminA += item.full_nutrients[22].value;
-        totals.vitaminC += item.full_nutrients[41].value;
-        totals.calcium += item.full_nutrients[12].value;
-        totals.iron += item.full_nutrients[13].value;
+        totals.vitaminA += item.full_nutrients.find((item) => { return item.attr_id === 318 }).value;
+        totals.vitaminC += item.full_nutrients.find((item) => { return item.attr_id === 401 }).value;
+        totals.calcium += item.full_nutrients.find((item) => { return item.attr_id === 301 }).value;
+        totals.iron += item.full_nutrients.find((item) => { return item.attr_id === 303 }).value;
         calories += item.nf_calories;
       });
       this.setState({
@@ -135,7 +118,6 @@ export default class FormContainer extends Component {
 
   _handleRecipePost = (item) => {
     // Post to Parse Server of new item
-    console.log('state before post to server', this.state);
     let totalCalories = this.state.totalCals / this.state.servings;
     item.totals = this.state.totals;
     item.recipe = this.state.recipe;
