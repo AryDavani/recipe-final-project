@@ -45,6 +45,7 @@ export default class FormContainer extends Component {
 
       this.setState({
         name: data.name,
+        totals: data.totals,
         totalCals: totalCals.toFixed([0]),
         description: data.description,
         calories: data.calories.toFixed([0]),

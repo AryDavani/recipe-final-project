@@ -21,7 +21,7 @@ export default class Macros extends Component {
     }).then((data) => {
       console.log('DATATATATATFROMSERVER', data);
 
-      let nutritionInfo = new NutritionInfo(data.totals);
+      let nutritionInfo = new NutritionInfo(data.totals, data.servings);
       this.setState({
         nutritionInfo: nutritionInfo,
         name: data.name
