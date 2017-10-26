@@ -19,16 +19,9 @@ html {
   text-align: center;
   margin: 100px;
 }
-.background {
-  background-image: url("rsz_food1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-}
+
 .background2 {
-  background-image: url("burger.jpg");
+  background-image: url("rsz_burger.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,7 +33,7 @@ html {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: url("food1.jpg");
+  background-image: url("rsz_food1.jpg");
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;

@@ -19,8 +19,6 @@ export default class Macros extends Component {
     }).then((resp) => {
       return resp.json();
     }).then((data) => {
-      console.log('DATATATATATFROMSERVER', data);
-
       let nutritionInfo = new NutritionInfo(data.totals, data.servings);
       this.setState({
         nutritionInfo: nutritionInfo,
@@ -30,7 +28,6 @@ export default class Macros extends Component {
   }
 
   render(){
-    console.log("Macros", this.state);
     return (
       <div className="nutrition-label-outer">
         <div className="nutrition-label">
