@@ -77,6 +77,7 @@ export default class FormContainer extends Component {
       console.log('data from api fetch', data.foods);
       let calories = 0;
       let totals = new NutritionInfo;
+      console.log('totals', totals);
       data.foods.map((item) => {
         totals.calories += item.nf_calories;
         totals.totalFat += item.nf_total_fat;
@@ -97,6 +98,7 @@ export default class FormContainer extends Component {
         totals.iron += item.full_nutrients.find((item) => { return item.attr_id === 303 }).value;
         calories += item.nf_calories;
       });
+      console.log('data from api fetch after instatiation: TOTALS', totals);
       this.setState({
         totals: totals,
         errorMsg: '',
@@ -129,6 +131,7 @@ export default class FormContainer extends Component {
       "className": "_User",
       "objectId": this.state.user.objectId
     };
+    console.log('item before post', item);
 
     let urlSuffix = this.state.idForEdit ? `/${this.state.idForEdit}` : '';
     let method = this.state.idForEdit ? 'PUT' : 'POST';

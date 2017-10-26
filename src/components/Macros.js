@@ -40,71 +40,71 @@ export default class Macros extends Component {
           <div className="nutrition-serving">Amount Per Serving</div>
           <div className="nutrition-item">
             <span className="nutrition-main"><strong>Calories</strong>{this.state.nutritionInfo.calories}</span>
-            <span className="nutrition-percentage">Calories from Fat 81</span>
+            <span className="nutrition-percentage">Calories from Fat {this.state.nutritionInfo.caloriesFromFat}</span>
           </div>
           <div className="nutrition-line"></div>
           <div className="nutrition-item">
             <span className="nutrition-percentage"><strong>% Daily Value*</strong></span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Total Fat</strong>9g</span>
+            <span className="nutrition-main"><strong>Total Fat</strong>{this.state.nutritionInfo.totalFat}g</span>
             <span className="nutrition-percentage"><strong>14%</strong></span>
           </div>
           <div className="nutrition-sub-item">
-            <span className="nutrition-sub">Saturated Fat 6g</span>
+            <span className="nutrition-sub">Saturated Fat {this.state.nutritionInfo.saturatedFat}g</span>
             <span className="nutrition-percentage"><strong>30%</strong></span>
           </div>
           <div className="nutrition-sub-item">
-            <span className="nutrition-sub"><i>Trans Fat</i> 0.2g</span>
+            <span className="nutrition-sub"><i>Trans Fat</i> {this.state.nutritionInfo.transFat}g</span>
           </div>
           <div className="nutrition-sub-item">
-            <span className="nutrition-sub">Polyunsaturated Fat 0.2g</span>
+            <span className="nutrition-sub">Polyunsaturated Fat {this.state.nutritionInfo.polyunsaturatedFat}g</span>
           </div>
           <div className="nutrition-sub-item">
-            <span className="nutrition-sub">Monounsaturated Fat 1g</span>
+            <span className="nutrition-sub">Monounsaturated Fat {this.state.nutritionInfo.monounsaturatedFat}g</span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Cholesterol</strong>21mg</span>
+            <span className="nutrition-main"><strong>Cholesterol</strong>{this.state.nutritionInfo.cholesterol}mg</span>
             <span className="nutrition-percentage"><strong>7%</strong></span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Sodium</strong>56mg</span>
+            <span className="nutrition-main"><strong>Sodium</strong>{this.state.nutritionInfo.sodium}mg</span>
             <span className="nutrition-percentage"><strong>2%</strong></span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Potassium</strong>8mg</span>
+            <span className="nutrition-main"><strong>Potassium</strong>{this.state.nutritionInfo.potassium}mg</span>
             <span className="nutrition-percentage"><strong>0%</strong></span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Total Carbohydrates</strong> 1g</span>
+            <span className="nutrition-main"><strong>Total Carbohydrates</strong> {this.state.nutritionInfo.totalCarbs}g</span>
             <span className="nutrition-percentage"><strong>0%</strong></span>
           </div>
           <div className="nutrition-sub-item">
-            <span className="nutrition-sub">Dietary Fiber 1g</span>
+            <span className="nutrition-sub">Dietary Fiber {this.state.nutritionInfo.fiber}g</span>
           </div>
           <div className="nutrition-sub-item">
-            <span className="nutrition-sub">Sugars 1g</span>
+            <span className="nutrition-sub">Sugars {this.state.nutritionInfo.sugars}g</span>
           </div>
           <div className="nutrition-item">
-            <span className="nutrition-main"><strong>Protein</strong>1g</span>
+            <span className="nutrition-main"><strong>Protein</strong>{this.state.nutritionInfo.protein}g</span>
             <span className="nutrition-percentage"><strong>2%</strong></span>
           </div>
           <div className="nutrition-line nutrition-line-big"></div>
           <div className="nutrition-item">
             <span className="nutrition-main">Vitamin A</span>
-            <span className="nutrition-percentage">6%</span>
+            <span className="nutrition-percentage">{this.state.nutritionInfo.vitaminA}%</span>
           </div>
           <div className="nutrition-item">
             <span className="nutrition-main">Vitamin C</span>
-            <span className="nutrition-percentage">0.1%</span>
+            <span className="nutrition-percentage">{this.state.nutritionInfo.vitaminC}%</span>
           </div>
           <div className="nutrition-item">
             <span className="nutrition-main">Calcium</span>
-            <span className="nutrition-percentage">2%</span>
+            <span className="nutrition-percentage">{this.state.nutritionInfo.calcium}%</span>
           </div>
           <div className="nutrition-item">
             <span className="nutrition-main">Iron</span>
-            <span className="nutrition-percentage">6%</span>
+            <span className="nutrition-percentage">{this.state.nutritionInfo.iron}%</span>
           </div>
           <div className="nutrition-warning">
             * Percent Daily Values are based on a 2000 calorie diet.
