@@ -28,6 +28,7 @@ export default class Macros extends Component {
   }
 
   render(){
+    console.log('macros', this.state);
     return (
       <div className="nutrition-label-outer">
         <div className="nutrition-label">
@@ -51,9 +52,9 @@ export default class Macros extends Component {
             <span className="nutrition-sub">Saturated Fat {this.state.nutritionInfo.saturatedFat}g</span>
             <span className="nutrition-percentage"><strong>30%</strong></span>
           </div>
-          <div className="nutrition-sub-item">
+          {/* <div className="nutrition-sub-item">
             <span className="nutrition-sub"><i>Trans Fat</i> {this.state.nutritionInfo.transFat}g</span>
-          </div>
+          </div> */}
           <div className="nutrition-sub-item">
             <span className="nutrition-sub">Polyunsaturated Fat {this.state.nutritionInfo.polyunsaturatedFat}g</span>
           </div>

@@ -56,7 +56,45 @@ export default class FormContainer extends Component {
         render: true
       });
     })
+  }
 
+  _handleNutritionCalc = (data) => {
+    console.log('handle nutrition calc data', data);
+    let calories = 0;
+    let totals = new NutritionInfo();
+    console.log('TOTALS', totals);
+    data.foods.map((item) => {
+      console.log('each item', item);
+      totals.calories += item.nf_calories;
+      totals.totalFat += item.nf_total_fat;
+      totals.saturatedFat += item.nf_saturated_fat;
+      totals.transFat += item.full_nutrients.find((item) => {
+        if (item.attr_id === 605) {
+          return item;
+        }
+        return {value: 0};
+      }).value;
+      totals.polyunsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 646 }).value;
+      totals.monounsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 645 }).value;
+      totals.cholesterol += item.nf_cholesterol;
+      totals.sodium += item.nf_sodium;
+      totals.potassium += item.nf_potassium;
+      totals.totalCarbs += item.nf_total_carbohydrate;
+      totals.fiber += item.nf_dietary_fiber;
+      totals.sugars += item.nf_sugars;
+      totals.protein += item.nf_protein;
+      totals.vitaminA += item.full_nutrients.find((item) => { return item.attr_id === 318 }).value;
+      totals.vitaminC += item.full_nutrients.find((item) => { return item.attr_id === 401 }).value;
+      totals.calcium += item.full_nutrients.find((item) => { return item.attr_id === 301 }).value;
+      totals.iron += item.full_nutrients.find((item) => { return item.attr_id === 303 }).value;
+      calories += item.nf_calories;
+    });
+
+    this.setState({
+      totals: totals,
+      totalCals: calories.toFixed(),
+      calories: calories.toFixed()
+    })
   }
 
   _handleFormSubmit = (item) => {
@@ -76,6 +114,7 @@ export default class FormContainer extends Component {
         });
         return;
       }
+      console.log('data from response', data);
       this._handleNutritionCalc(data);
 
       this.setState({
@@ -120,38 +159,6 @@ export default class FormContainer extends Component {
     }).then(() => {
       this.props.history.push(PROJECT_URI + '/home');
     });
-  }
-
-  _handleNutritionCalc = (data) => {
-    let calories = 0;
-    let totals = new NutritionInfo();
-
-    data.foods.map((item) => {
-      totals.calories += item.nf_calories;
-      totals.totalFat += item.nf_total_fat;
-      totals.saturatedFat += item.nf_saturated_fat;
-      totals.transFat += item.full_nutrients.find((item) => { return item.attr_id === 605 }).value;
-      totals.polyunsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 646 }).value;
-      totals.monounsaturatedFat += item.full_nutrients.find((item) => { return item.attr_id === 645 }).value;
-      totals.cholesterol += item.nf_cholesterol;
-      totals.sodium += item.nf_sodium;
-      totals.potassium += item.nf_potassium;
-      totals.totalCarbs += item.nf_total_carbohydrate;
-      totals.fiber += item.nf_dietary_fiber;
-      totals.sugars += item.nf_sugars;
-      totals.protein += item.nf_protein;
-      totals.vitaminA += item.full_nutrients.find((item) => { return item.attr_id === 318 }).value;
-      totals.vitaminC += item.full_nutrients.find((item) => { return item.attr_id === 401 }).value;
-      totals.calcium += item.full_nutrients.find((item) => { return item.attr_id === 301 }).value;
-      totals.iron += item.full_nutrients.find((item) => { return item.attr_id === 303 }).value;
-      calories += item.nf_calories;
-    });
-
-    this.setState({
-      totals: totals,
-      totalCals: calories.toFixed(),
-      calories: calories.toFixed()
-    })
   }
 
 

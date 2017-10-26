@@ -20,7 +20,7 @@ export default class Navbar extends Component {
           <NavLink to={ PROJECT_URI + '/menu' }>My Menu</NavLink>
         </div>
         <div className='nav-options'>
-          <NavLink to={ PROJECT_URI + '/home/help' }>Help</NavLink>
+          {/* <NavLink to={ PROJECT_URI + '/home/help' }>Help</NavLink> */}
           <NavLink to={ PROJECT_URI + '/' } onClick={() => {localStorage.clear()}}>Sign Out</NavLink>
         </div>
       </div>
