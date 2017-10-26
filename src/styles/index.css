@@ -21,7 +21,7 @@ html {
 }
 
 .background2 {
-  background-image: url("rsz_burger.jpg");
+  background-image: url("/images/rsz_burger.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -33,7 +33,7 @@ html {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: url("rsz_food1.jpg");
+  background-image: url("/images/rsz_food1.jpg");
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
@@ -310,7 +310,7 @@ html {
 
 /****************************** NUTRITION LABEL ****************************/
 .nutrition-label-outer {
-  background-image: url("rsz_label.jpg");
+  background-image: url("/images/rsz_label.jpg");
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
