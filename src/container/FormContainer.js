@@ -75,14 +75,32 @@ export default class FormContainer extends Component {
       }
       console.log('data from api fetch', data.foods);
       let calories = 0;
-      let totals = {};
+      let totals = {
+        calories: 0,
+        totalFat: 0,
+        saturatedFat: 0,
+        // transFat: 0,
+        // polyunsaturatedFat: 0,
+        // monounsaturatedFat: 0,
+        cholesterol: 0,
+        sodium: 0,
+        potassium: 0,
+        totalCarbs: 0,
+        fiber: 0,
+        sugars: 0,
+        protein: 0,
+        vitaminA: 0,
+        vitaminC: 0,
+        calcium: 0,
+        iron: 0
+      };
       data.foods.map((item) => {
         totals.calories += item.nf_calories;
         totals.totalFat += item.nf_total_fat;
         totals.saturatedFat += item.nf_saturated_fat;
-        totals.transFat += item.full_nutrients[69].value;
-        totals.polyunsaturatedFat += item.full_nutrients[94].value;
-        totals.monounsaturatedFat += item.full_nutrients[93].value;
+        // totals.transFat += item.full_nutrients[82].value;
+        // totals.polyunsaturatedFat += item.full_nutrients[94].value;
+        // totals.monounsaturatedFat += item.full_nutrients[93].value;
         totals.cholesterol += item.nf_cholesterol;
         totals.sodium += item.nf_sodium;
         totals.potassium += item.nf_potassium;
@@ -96,9 +114,8 @@ export default class FormContainer extends Component {
         totals.iron += item.full_nutrients[13].value;
         calories += item.nf_calories;
       });
-      console.log('TOTALS', totals);
       this.setState({
-        // totals: totals,
+        totals: totals,
         errorMsg: '',
         totalCals: calories.toFixed([0]),
         calories: calories.toFixed([0]),
@@ -108,7 +125,6 @@ export default class FormContainer extends Component {
         apiData: data
       });
     })
-
   }
 
   _handleCalorieCount = (num) =>{
@@ -119,9 +135,9 @@ export default class FormContainer extends Component {
 
   _handleRecipePost = (item) => {
     // Post to Parse Server of new item
-    console.log('before post ASDFASDFASDF', this.state);
+    console.log('state before post to server', this.state);
     let totalCalories = this.state.totalCals / this.state.servings;
-    // item.totals = this.state.totals;
+    item.totals = this.state.totals;
     item.recipe = this.state.recipe;
     item.calories = totalCalories;
     item.servings = parseInt(this.state.servings);
@@ -148,7 +164,6 @@ export default class FormContainer extends Component {
 
 
   render(){
-    console.log('does this reachhhhhhh??????', this);
     return(
       <BaseLayout>
         <Form handleFormSubmit={ this._handleFormSubmit } data={ this.state } handleCalorieCount={ this._handleCalorieCount } handleEditPost={ this._handleEditPost } edit={ this.state.IdForEdit }/>

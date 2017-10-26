@@ -5,7 +5,6 @@ import Footer from './Footer';
 export default class BaseLayout extends Component {
 
   render(){
-    console.log('BASELAYOUT', this);
     return (
       <div>
         <Navbar/>
