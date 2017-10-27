@@ -13,11 +13,11 @@ export default class Navbar extends Component {
     return (
       <div className="navigation">
         <div className="user">
-          <i className="user-icon fa fa-cutlery fa-2x"></i>
+          <NavLink to={ PROJECT_URI + '/'}><i className="user-icon fa fa-home fa-lg"></i></NavLink>
         </div>
         <div className='navbar1'>
           <NavLink to={ PROJECT_URI + '/home' }>Dashboard</NavLink>
-          <NavLink to={ PROJECT_URI + '/menu' }>My Menu</NavLink>
+          <NavLink to={ PROJECT_URI + '/menu' }>Menu</NavLink>
         </div>
         <div className='nav-options'>
           {/* <NavLink to={ PROJECT_URI + '/home/help' }>Help</NavLink> */}

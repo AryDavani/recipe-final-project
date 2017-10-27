@@ -35,7 +35,8 @@ export default class CrudList extends Component {
               <tr>
                 <th scope="col" className="col-md-2 center-text">Action</th>
                 <th scope="col" className="col-md-2 center-text">Title</th>
-                <th scope="col" className="col-md-7">Description</th>
+                <th scope="col" className="col-md-6">Description</th>
+                <th scope="col" className="col-md-1 center-text">Servings</th>
                 <th scope="col" className="col-md-1 center-text">Calories</th>
               </tr>
             </thead>

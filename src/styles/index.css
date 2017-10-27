@@ -89,19 +89,13 @@ html {
 .landing-nav {
   background-color: rgba(15, 15, 15, 0.6);
   width: 100%;
-  padding: 10px 5vw;
+  padding: 20px 5vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.landing-nav p {
-  padding: 3px;
-  font-size: 40px;
-  letter-spacing: 2px;
-  margin: 0;
-}
 .landing-nav a {
-  margin: 2px;
+  margin: 2px 2vw;
   padding: 3px 5px;
   text-decoration: none;
   color: #f7f0e2;
@@ -110,7 +104,7 @@ html {
 }
 
 .landing-nav a:hover {
-  text-decoration: underline;
+  color: rgb(223, 181, 0);
 }
 .title {
   color: rgb(223, 181, 0);
@@ -306,6 +300,10 @@ html {
 }
 .crud-menu {
   margin-bottom: 100px;
+  margin: 1%;
+}
+.text-right {
+  text-align: right;
 }
 
 /****************************** NUTRITION LABEL ****************************/

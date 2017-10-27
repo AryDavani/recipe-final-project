@@ -21,22 +21,21 @@ export default class Menu extends Component {
 
     return (
       <div className="container menu">
-        <div className="row">
-        </div>
         { this.props.menuItems.length ?
           <div className="row">
             <div className="col-md-9">
             </div>
-            <div className="col-md-1">
+            {/* <div className="col-md-1">
               <h5>Sort By:</h5>
-            </div>
-            <div className="col-md-2">
-              <select className="form-control" onChange={ this._handleChange }>
+            </div> */}
+            <div className="col-md-3">
+              {/* <select className="form-control" onChange={ this._handleChange }>
                 <option>Select</option>
                 <option>Name</option>
                 <option>Calories (highest to lowest)</option>
                 <option>Calories (lowest to highest)</option>
-              </select>
+              </select> */}
+              <h4 className="text-right">calories per serving</h4>
             </div>
           </div> :
           <div>

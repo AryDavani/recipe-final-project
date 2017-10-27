@@ -10,6 +10,7 @@ export default class LandingPage extends Component {
       <div>
         <div className="background3">
           <div className="landing-nav">
+            <NavLink to={ PROJECT_URI + '/home' }>Home</NavLink>
             <NavLink to={ PROJECT_URI + '/login' }>Login</NavLink>
           </div>
           <div className="banner">

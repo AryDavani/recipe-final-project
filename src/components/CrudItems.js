@@ -24,6 +24,7 @@ export default class CrudItems extends Component {
         </td>
         <td className="center-text">{ this.props.item.name }</td>
         <td className="">{ this.props.item.description }</td>
+        <td className="center-text">{ this.props.item.servings }</td>
         <td className="center-text">{ this.props.item.calories.toFixed([0]) }</td>
       </tr>
     )

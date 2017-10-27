@@ -41,6 +41,9 @@ export default class MenuContainer extends Component {
     console.log('render state', this.state);
     return(
       <BaseLayout>
+        <div>
+          <h1 className="center-text well">My Menu Items</h1>
+        </div>
         <Menu menuItems={ this.state.menuItems }/>
       </BaseLayout>
     )
