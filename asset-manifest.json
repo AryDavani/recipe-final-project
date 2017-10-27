@@ -1,9 +1,12 @@
 {
-  "main.css": "static/css/main.5ed7da67.css",
-  "main.css.map": "static/css/main.5ed7da67.css.map",
-  "main.js": "static/js/main.85e97e20.js",
-  "main.js.map": "static/js/main.85e97e20.js.map",
+  "main.css": "static/css/main.587d7ae9.css",
+  "main.css.map": "static/css/main.587d7ae9.css.map",
+  "main.js": "static/js/main.9a22dfec.js",
+  "main.js.map": "static/js/main.9a22dfec.js.map",
   "static/media/label2.png": "static/media/label2.3deeafaa.png",
   "static/media/pins.png": "static/media/pins.7a155582.png",
-  "static/media/plate.png": "static/media/plate.08761383.png"
+  "static/media/plate.png": "static/media/plate.08761383.png",
+  "static/media/rsz_burger.jpg": "static/media/rsz_burger.dbd3bcbb.jpg",
+  "static/media/rsz_food1.jpg": "static/media/rsz_food1.1cd183f4.jpg",
+  "static/media/rsz_label.jpg": "static/media/rsz_label.fc05a35e.jpg"
 }
