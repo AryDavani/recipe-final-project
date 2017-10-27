@@ -9,11 +9,11 @@ export default class Navbar extends Component {
   }
 
   render(){
+    console.log('navbar props', this.props);
     return (
       <div className="navigation">
         <div className="user">
-          <i className="user-icon fa fa-user fa-lg"></i>
-          {/* <NavLink to='#'>{ this.props.user }</NavLink> */}
+          <i className="user-icon fa fa-cutlery fa-2x"></i>
         </div>
         <div className='navbar1'>
           <NavLink to={ PROJECT_URI + '/home' }>Dashboard</NavLink>

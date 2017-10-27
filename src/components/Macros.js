@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {PARSE_URL, PARSE_HEADERS} from '../parse';
 import NutritionInfo from '../models/nutrition';
 import Footer from './Footer';
+import {NavLink} from 'react-router-dom';
+import PROJECT_URI from '../utility';
 
 
 export default class Macros extends Component {

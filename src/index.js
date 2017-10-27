@@ -23,7 +23,7 @@ ReactDOM.render(
       <Route exact path={ PROJECT_URI + '/' } component={ LandingPage }/>
       <Route path={ PROJECT_URI + '/home/edit/:objectId'} component={ FormContainer }/>
       <Route path={ PROJECT_URI + '/home/form'} component={ FormContainer }/>
-      <Route path={ PROJECT_URI + '/home/help'} component={ Help }/>
+      {/* <Route path={ PROJECT_URI + '/home/help'} component={ Help }/> */}
       <Route path={ PROJECT_URI + '/home' } component={ authRequired(Dashboard) }/>
       <Route path={ PROJECT_URI + '/menu/:objectId' } component={ Macros }/>
       <Route path={ PROJECT_URI + '/menu' } component={ authRequired(MenuContainer) }/>
