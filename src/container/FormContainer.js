@@ -164,7 +164,7 @@ export default class FormContainer extends Component {
 
   render(){
     return(
-      <BaseLayout>
+      <BaseLayout user={this.state.user}>
         <Form handleFormSubmit={ this._handleFormSubmit } data={ this.state } handleCalorieCount={ this._handleCalorieCount } handleEditPost={ this._handleEditPost } edit={ this.state.IdForEdit }/>
         <AddRecipe data={ this.state } handleRecipePost={ this._handleRecipePost }/>
       </BaseLayout>

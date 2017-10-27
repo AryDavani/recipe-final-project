@@ -6,7 +6,7 @@ export default class Info extends Component {
     return (
       <div className="container">
         <div className="info">
-          <h4>FDA Regulations</h4>
+          <h3>FDA Regulations</h3>
           <blockquote>
             "Americans eat and drink about one-third of their calories away from home. Making calorie information available on chain restaurant menus will help consumers make informed choices for themselves and their families."
             <br/>
@@ -21,11 +21,11 @@ export default class Info extends Component {
           </div>
           <div>
             <img src={require("../images/label2.png")}/>
-            <p>Get Nutrition</p>
+            <p>Calculate Servings</p>
           </div>
           <div>
             <img src={require("../images/plate.png")}/>
-            <p>Calculate Servings</p>
+            <p>Get Nutrition</p>
           </div>
         </div>
       </div>

@@ -25,8 +25,6 @@ export default class LoginForm extends Component {
   }
 
   render(){
-    console.log(this.props);
-
     return (
       <AuthLayout>
         <div className="center-flex">

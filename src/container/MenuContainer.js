@@ -38,9 +38,8 @@ export default class MenuContainer extends Component {
   }
 
   render(){
-    console.log('render state', this.state);
     return(
-      <BaseLayout>
+      <BaseLayout user={this.state.user}>
         <div>
           <h1 className="center-text well">My Menu Items</h1>
         </div>

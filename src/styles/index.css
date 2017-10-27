@@ -79,9 +79,10 @@ html {
   font-size: 22px;
   margin: 10px 20px;
 }
-.user-icon {
-  color: #f7f0e2;
+.user a:hover {
+  color: rgb(223, 181, 0);
 }
+
 .navigation {
   display: flex;
   background-color: #02122C;
@@ -146,12 +147,14 @@ html {
 .auth-forms h1 {
   text-align: center;
 }
-
+blockquote {
+  font-size: 20px;
+}
 .info {
-  box-shadow: 10px 10px 20px gray;
+  /*box-shadow: 10px 10px 20px gray;*/
   margin: 5% 0%;
   color: #000;
-  background-color: #dddbdb;
+  /*background-color: #dddbdb;*/
   padding: 2% 5%;
 }
 .icons {
@@ -189,8 +192,8 @@ html {
   font-size: 30px;
 }
 .cards div img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 }
 .banner {
   color: rgb(222, 222, 222);

@@ -53,7 +53,7 @@ export default class Macros extends Component {
 
 
   render(){
-    console.log('macros', this.state);
+    console.log('macros', this.state.nutritionInfo);
     return (
       <div>
         <div className="nutrition-nav">
@@ -78,7 +78,7 @@ export default class Macros extends Component {
             </div>
             <div className="nutrition-sub-item">
               <span className="nutrition-sub">Saturated Fat {this.state.nutritionInfo.saturatedFat}g</span>
-              <span className="nutrition-percentage"><strong>{this.state.percentages.saturatedFat}0%</strong></span>
+              <span className="nutrition-percentage"><strong>{this.state.percentages.saturatedFat}%</strong></span>
             </div>
             {/* <div className="nutrition-sub-item">
               <span className="nutrition-sub"><i>Trans Fat</i> {this.state.nutritionInfo.transFat}g</span>
