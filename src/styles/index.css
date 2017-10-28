@@ -41,13 +41,9 @@ html {
   text-align: center;
   color: #fff;
 }
-.background4 {
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .nav-options {
+  background-color: rgba(0, 0, 0, 0);
   width: 100%;
   padding-right: 20px;
   display: flex;
@@ -90,18 +86,17 @@ html {
 .landing-nav {
   background-color: rgba(15, 15, 15, 0.6);
   width: 100%;
-  padding: 20px 5vw;
+  padding: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 .landing-nav a {
-  margin: 2px 2vw;
-  padding: 3px 5px;
-  text-decoration: none;
   color: #f7f0e2;
-  font-size: 20px;
   font-weight: lighter;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 8px 27.4px;
 }
 
 .landing-nav a:hover {
@@ -151,11 +146,12 @@ blockquote {
   font-size: 20px;
 }
 .info {
-  /*box-shadow: 10px 10px 20px gray;*/
   margin: 5% 0%;
-  color: #000;
-  /*background-color: #dddbdb;*/
   padding: 2% 5%;
+}
+.lastname {
+  color: #f7f0e2;
+  font-size: 16px;
 }
 .icons {
   font-size: 130px;
@@ -186,14 +182,20 @@ blockquote {
   height: 300px;
 }
 .cards div p {
+  font-family: 'Amatic SC', cursive;
   padding: 20px 0px;
   text-align: center;
-  font-weight: 300;
-  font-size: 30px;
+  font-weight: 600;
+  font-size: 45px;
 }
 .cards div img {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
+}
+.page-titles {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
 }
 .banner {
   color: rgb(222, 222, 222);
@@ -260,6 +262,7 @@ blockquote {
 }
 .center-text {
   text-align: center;
+  margin: 0;
 }
 .right-text {
   text-align: right;
@@ -275,25 +278,35 @@ blockquote {
   justify-content: center;
 }
 .menu-items {
-  margin: 15px 5px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  box-shadow: 3px 3px 10px black;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px dotted gray;
 }
 .menu-heading {
-  background-color: rgba(170, 170, 170, 0.3);
-  padding: 0px 20px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
-}
-.menu-description {
-  padding: 20px;
+  align-items: center;
 }
 .menu {
-  border-radius: 5px;
-  margin-top: 40px;
-  margin-bottom: 110px;
+  margin-bottom: 100px;
+  width: 70%;
 }
+
+.menu-description {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.menu-heading a {
+  color: #000;
+  font-size: 30px;
+}
+
+
 .edit-delete-buttons {
   display: flex;
   justify-content: space-around;
@@ -303,7 +316,6 @@ blockquote {
 }
 .crud-menu {
   margin-bottom: 100px;
-  margin: 1%;
 }
 .text-right {
   text-align: right;

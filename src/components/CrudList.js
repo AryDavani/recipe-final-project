@@ -30,7 +30,7 @@ export default class CrudList extends Component {
           <button className="btn btn-primary" onClick={ this._newMenuItem }>New Menu Item</button>
         </div>
         { this.props.menuItems.length ?
-          <table className="crud-table table table-striped">
+          <table className="table table-striped">
             <thead>
               <tr>
                 <th scope="col" className="col-md-2 center-text">Action</th>

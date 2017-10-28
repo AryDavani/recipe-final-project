@@ -9,14 +9,14 @@ export default class MenuList extends Component {
   }
   render(){
     return(
-      <div className="container">
+      <div className="">
         <div className="menu-items">
           <div className="menu-heading">
-            <NavLink to={ PROJECT_URI + '/menu/' + this.props.item.objectId}><h2>{ this.props.item.name }</h2></NavLink>
-            <h2>{ this.props.item.calories.toFixed([0]) }</h2>
+            <NavLink to={ PROJECT_URI + '/menu/' + this.props.item.objectId}>{ this.props.item.name }</NavLink>
+            <h4>{ this.props.item.calories.toFixed([0]) } calories</h4>
           </div>
           <div className="menu-description">
-            <h4>{ this.props.item.description }</h4>
+            <p>{ this.props.item.description }</p>
           </div>
         </div>
       </div>

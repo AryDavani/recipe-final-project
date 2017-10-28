@@ -21,23 +21,7 @@ export default class Menu extends Component {
 
     return (
       <div className="container menu">
-        { this.props.menuItems.length ?
-          <div className="row">
-            <div className="col-md-9">
-            </div>
-            {/* <div className="col-md-1">
-              <h5>Sort By:</h5>
-            </div> */}
-            <div className="col-md-3">
-              {/* <select className="form-control" onChange={ this._handleChange }>
-                <option>Select</option>
-                <option>Name</option>
-                <option>Calories (highest to lowest)</option>
-                <option>Calories (lowest to highest)</option>
-              </select> */}
-              <h4 className="text-right">calories per serving</h4>
-            </div>
-          </div> :
+        { this.props.menuItems.length ? null :
           <div>
             <h4 className="empty-message">There are no menu items to display.</h4>
           </div>
