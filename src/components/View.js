@@ -50,8 +50,6 @@ export default class View extends Component {
           </NavLink>
           <i onClick={this._handlePrint} className="printer fa fa-print fa-2x"></i>
         </div>
-        {/* <div className="container text-right">
-        </div> */}
         <div className="view-items container">
           <div className="center-text">
             <h1>{this.state.name} Recipe</h1>

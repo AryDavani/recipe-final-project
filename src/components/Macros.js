@@ -70,6 +70,10 @@ export default class Macros extends Component {
     });
   };
 
+  _handlePrint = () => {
+    window.print();
+  }
+
   render() {
     return (
       <div>
@@ -77,7 +81,7 @@ export default class Macros extends Component {
           <NavLink to={PROJECT_URI + "/menu"}>
             <i className="fa fa-long-arrow-left fa-2x" />
           </NavLink>
-          <i className="fa fa-print fa-2x"></i>
+          <i onClick={this._handlePrint} className="fa fa-print fa-2x"></i>
         </div>
         <div className="nutrition-label-outer">
           <div className="nutrition-label">
