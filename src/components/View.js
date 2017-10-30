@@ -48,7 +48,7 @@ export default class View extends Component {
 
         <div className="view-items container">
           <div className="center-text">
-            <h1>{this.state.name}</h1>
+            <h1>{this.state.name} Recipe</h1>
           </div>
           <br/>
           <br/>
