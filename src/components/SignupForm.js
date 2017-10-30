@@ -15,7 +15,7 @@ export default class SignupForm extends Component {
 
     user.firstname = e.target.firstname.value;
     user.lastname = e.target.restaurant.value;
-    user.username = e.target.email.value;
+    user.username = e.target.username.value;
     user.password = e.target.password.value;
 
     this.props.handleSignupForm(user);
@@ -54,13 +54,13 @@ export default class SignupForm extends Component {
                 </div>
                 <div className="row">
                   <div className="form-group col-md-12">
-                    <label>Email address</label>
+                    <label>Username</label>
                     <input
                       required
-                      type="email"
+                      type="text"
                       className="form-control"
-                      name="email"
-                      placeholder="Enter email"
+                      name="username"
+                      placeholder="Username"
                     />
                   </div>
                   <div className="form-group col-md-12">

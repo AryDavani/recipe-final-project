@@ -61,12 +61,10 @@ export default class FormContainer extends Component {
   };
 
   _handleNutritionCalc = data => {
-    console.log("handle nutrition calc data", data);
     let calories = 0;
     let totals = new NutritionInfo();
     console.log("TOTALS", totals);
     data.foods.map(item => {
-      console.log("each item", item);
       totals.calories += item.nf_calories;
       totals.totalFat += item.nf_total_fat;
       totals.saturatedFat += item.nf_saturated_fat;
@@ -77,10 +75,16 @@ export default class FormContainer extends Component {
         return { value: 0 };
       }).value;
       totals.polyunsaturatedFat += item.full_nutrients.find(item => {
-        return item.attr_id === 646;
+        if (item.attr_id === 646) {
+          return item;
+        }
+        return { value: 0 };
       }).value;
       totals.monounsaturatedFat += item.full_nutrients.find(item => {
-        return item.attr_id === 645;
+        if (item.attr_id === 645) {
+          return item;
+        }
+        return { value: 0 };
       }).value;
       totals.cholesterol += item.nf_cholesterol;
       totals.sodium += item.nf_sodium;
@@ -90,16 +94,28 @@ export default class FormContainer extends Component {
       totals.sugars += item.nf_sugars;
       totals.protein += item.nf_protein;
       totals.vitaminA += item.full_nutrients.find(item => {
-        return item.attr_id === 318;
+        if (item.attr_id === 318) {
+          return item;
+        }
+        return { value: 0 };
       }).value;
       totals.vitaminC += item.full_nutrients.find(item => {
-        return item.attr_id === 401;
+        if (item.attr_id === 401) {
+          return item;
+        }
+        return { value: 0 };
       }).value;
       totals.calcium += item.full_nutrients.find(item => {
-        return item.attr_id === 301;
+        if (item.attr_id === 301) {
+          return item;
+        }
+        return { value: 0 };
       }).value;
       totals.iron += item.full_nutrients.find(item => {
-        return item.attr_id === 303;
+        if (item.attr_id === 303) {
+          return item;
+        }
+        return { value: 0 };
       }).value;
       calories += item.nf_calories;
     });

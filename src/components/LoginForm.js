@@ -11,7 +11,7 @@ export default class LoginForm extends Component {
   _handleLoginForm = e => {
     e.preventDefault();
 
-    let un = e.target.email.value;
+    let un = e.target.username.value;
     let pw = e.target.password.value;
     let qs = "username=" + encodeURIComponent(un) + "&password=" + pw;
 
@@ -34,13 +34,13 @@ export default class LoginForm extends Component {
               <form onSubmit={this._handleLoginForm}>
                 <div className="row">
                   <div className="form-group col-md-12">
-                    <label>Email address</label>
+                    <label>Username</label>
                     <input
                       required
-                      type="email"
+                      type="text"
                       className="form-control"
-                      name="email"
-                      placeholder="Enter email"
+                      name="username"
+                      placeholder="Username"
                     />
                   </div>
                   <div className="form-group col-md-12">
