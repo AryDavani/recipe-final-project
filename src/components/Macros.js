@@ -56,7 +56,8 @@ export default class Macros extends Component {
     console.log('macros', this.state.nutritionInfo);
     return (
       <div>
-        <div className="nutrition-nav">
+        <div className="nutrition-nav user">
+          <NavLink to={ PROJECT_URI + '/menu'}><i className="fa fa-long-arrow-left fa-2x"></i></NavLink>
         </div>
         <div className="nutrition-label-outer">
           <div className="nutrition-label">

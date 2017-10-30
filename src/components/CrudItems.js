@@ -19,6 +19,7 @@ export default class CrudItems extends Component {
     return(
       <tr>
         <td scope="row" className="edit-delete-buttons">
+          <button className="btn btn-primary" onClick={ this._handleDelete }>View</button>          
           <button className="btn btn-warning" onClick={ this._handleEdit }>Edit</button>
           <button className="btn btn-danger" onClick={ this._handleDelete }>Delete</button>
         </td>

@@ -42,6 +42,7 @@ html {
   color: #fff;
 }
 
+
 .nav-options {
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
@@ -67,7 +68,6 @@ html {
   display: flex;
   align-items: center;
 }
-
 .user a {
   color: #f7f0e2;
   font-weight: lighter;
@@ -186,7 +186,7 @@ blockquote {
   padding: 20px 0px;
   text-align: center;
   font-weight: 600;
-  font-size: 45px;
+  font-size: 44px;
 }
 .cards div img {
   width: 160px;
@@ -289,6 +289,9 @@ blockquote {
   justify-content: space-between;
   align-items: center;
 }
+.menu-heading a {
+  width: 60%;
+}
 .menu {
   margin-bottom: 100px;
   width: 70%;
@@ -302,7 +305,7 @@ blockquote {
   padding-top: 10px;
 }
 .menu-heading a {
-  color: #000;
+  /*color: #000;*/
   font-size: 30px;
 }
 
