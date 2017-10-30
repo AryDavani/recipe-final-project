@@ -33,6 +33,10 @@ export default class View extends Component {
     })
   }
 
+  _handlePrint = () => {
+    window.print();
+  }
+
   render(){
     let nutritionInfo = this.state.apiData.map((item, index) => {
       return <NutritionTable key={index} item={item} />;
@@ -44,8 +48,10 @@ export default class View extends Component {
           <NavLink to={PROJECT_URI + "/home"}>
             <i className="fa fa-long-arrow-left fa-2x" />
           </NavLink>
+          <i onClick={this._handlePrint} className="printer fa fa-print fa-2x"></i>
         </div>
-
+        {/* <div className="container text-right">
+        </div> */}
         <div className="view-items container">
           <div className="center-text">
             <h1>{this.state.name} Recipe</h1>

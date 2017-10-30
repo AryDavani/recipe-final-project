@@ -63,20 +63,25 @@ html {
 }
 
 .user {
+  color: #f7f0e2;
   width: 100%;
-  padding-left: 20px;
+  padding: 0px 30px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .user a {
   color: #f7f0e2;
   font-weight: lighter;
   text-decoration: none;
   font-size: 22px;
-  margin: 10px 20px;
 }
 .user a:hover {
   color: rgb(223, 181, 0);
+}
+.user i:hover {
+  color: rgb(223, 181, 0);
+  cursor: pointer;
 }
 
 .navigation {
@@ -309,7 +314,7 @@ blockquote {
 }
 
 .view-items {
-  margin-top: 50px;
+  /*margin-top: 20px;*/
   margin-bottom: 100px;
 }
 .edit-delete-buttons {
@@ -328,6 +333,7 @@ blockquote {
 .text-right {
   text-align: right;
 }
+
 
 /****************************** NUTRITION LABEL ****************************/
 .nutrition-nav {
@@ -426,4 +432,13 @@ blockquote {
   margin-top: 5px;
 	color: #aaaaaa;
 	font-size: .8em;
+}
+
+@media print {
+  .nutrition-label {
+    transform: scale(2);
+  }
+  .nutrition-nav {
+    display: none;
+  }
 }
