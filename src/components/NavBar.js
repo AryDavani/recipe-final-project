@@ -19,7 +19,6 @@ export default class Navbar extends Component {
           <NavLink to={PROJECT_URI + "/menu"} activeStyle={{ color: "#dfb500" }}>Menu</NavLink>
         </div>
         <div className="nav-options">
-          {/* <h4 className="lastname">{this.props.user.lastname}</h4> */}
           <NavLink to={PROJECT_URI + "/"}>Home</NavLink>
           <NavLink
             to={PROJECT_URI + "/"}

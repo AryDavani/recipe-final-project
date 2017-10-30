@@ -275,7 +275,11 @@ blockquote {
 .add-recipe {
   padding: 20px;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F9F9F9;
+  margin-bottom: 10px;
+
 }
 .empty-message {
   padding: 100px;
