@@ -14,6 +14,10 @@ export default class CrudList extends Component {
     this.props.handleEditPost(item);
   };
 
+  _handleView = item => {
+    this.props.handleView(item);
+  };
+
   _newMenuItem = () => {
     this.props.newMenuItem();
   };
@@ -26,6 +30,7 @@ export default class CrudList extends Component {
           item={item}
           handleDelete={this._handleDelete}
           handleEdit={this._handleEdit}
+          handleView={this._handleView}
         />
       );
     });

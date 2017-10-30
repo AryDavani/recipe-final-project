@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PROJECT_URI from '../utility';
 
 export default class CrudItems extends Component {
   constructor() {
@@ -11,15 +12,20 @@ export default class CrudItems extends Component {
   };
 
   _handleEdit = () => {
-    let item = this.props.item;
+    let item = this.props.item.objectId;
     this.props.handleEdit(item);
+  };
+
+  _handleView = () => {
+    let item = this.props.item.objectId;
+    this.props.handleView(item);
   };
 
   render() {
     return (
       <tr>
         <td scope="row" className="edit-delete-buttons">
-          <button className="btn btn-primary" onClick={this._handleDelete}>
+          <button className="btn btn-primary" onClick={this._handleView}>
             View
           </button>
           <button className="btn btn-warning" onClick={this._handleEdit}>

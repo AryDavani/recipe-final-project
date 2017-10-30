@@ -55,6 +55,7 @@ export default class AddRecipe extends Component {
             <form className="step-three" onSubmit={this._handleRecipePost}>
               <div className="row">
                 <div className="col-md-6">
+                  <label>Title</label>
                   <input
                     required
                     type="text"
@@ -68,6 +69,7 @@ export default class AddRecipe extends Component {
               </div>
               <div className="row">
                 <div className="col-md-8">
+                  <label>Description</label>
                   <textarea
                     rows="5"
                     required

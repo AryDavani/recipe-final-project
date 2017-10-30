@@ -66,9 +66,12 @@ export default class Dashboard extends Component {
     this.props.history.push(PROJECT_URI + "/home/form");
   };
 
+  _handleView = item => {
+    this.props.history.push(PROJECT_URI + "/home/view/" + item);
+  };
+
   _handleEditPost = item => {
-    console.log("edit post recieved", item.objectId);
-    this.props.history.push(PROJECT_URI + "/home/edit/" + item.objectId);
+    this.props.history.push(PROJECT_URI + "/home/edit/" + item);
   };
 
   render() {
@@ -78,6 +81,7 @@ export default class Dashboard extends Component {
         <CrudList
           menuItems={this.state.menuItems}
           handleDelete={this._handleDelete}
+          handleView={this._handleView}
           newMenuItem={this._newMenuItem}
           handleEditPost={this._handleEditPost}
         />
