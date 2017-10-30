@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import BaseLayout from '../components/BaseLayout';
-import Menu from '../components/Menu';
-import {PARSE_URL, PARSE_HEADERS} from '../parse';
+import React, { Component } from "react";
+import BaseLayout from "../components/BaseLayout";
+import Menu from "../components/Menu";
+import { PARSE_URL, PARSE_HEADERS } from "../parse";
 
 export default class MenuContainer extends Component {
   constructor() {
@@ -10,11 +10,11 @@ export default class MenuContainer extends Component {
     this.state = {
       menuItems: [],
       user: {}
-    }
+    };
   }
 
   componentWillMount = () => {
-    let user = JSON.parse(localStorage.getItem('user'));
+    let user = JSON.parse(localStorage.getItem("user"));
 
     this.setState({
       user: user
@@ -22,29 +22,37 @@ export default class MenuContainer extends Component {
 
     // Building pointer per user to pull specific posts on logged in user
     let pointer = {
-      "__type":"Pointer",
-      "className":"_User",
-      "objectId": user.objectId
+      __type: "Pointer",
+      className: "_User",
+      objectId: user.objectId
     };
 
     // fetching user's posts
-    fetch(PARSE_URL + '/classes/menuItems/?where={"owner":' + JSON.stringify(pointer) + '}', {
-      headers: PARSE_HEADERS
-    }).then((response) => {
-      return response.json();
-    }).then((data) => {
-      this.setState({menuItems: data.results})
-    })
-  }
+    fetch(
+      PARSE_URL +
+        '/classes/menuItems/?where={"owner":' +
+        JSON.stringify(pointer) +
+        "}",
+      {
+        headers: PARSE_HEADERS
+      }
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        this.setState({ menuItems: data.results });
+      });
+  };
 
-  render(){
-    return(
+  render() {
+    return (
       <BaseLayout user={this.state.user}>
         <div className="">
           <h1 className="page-titles">My Menu Items</h1>
-          <Menu menuItems={ this.state.menuItems }/>
+          <Menu menuItems={this.state.menuItems} />
         </div>
       </BaseLayout>
-    )
+    );
   }
 }

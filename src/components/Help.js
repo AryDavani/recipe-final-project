@@ -1,7 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 export default function Help() {
-  return (
-    <h1>help page</h1>
-  )
+  return <h1>help page</h1>;
 }

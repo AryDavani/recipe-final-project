@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import PROJECT_URI from '../utility';
+import React, { Component } from "react";
+import PROJECT_URI from "../utility";
 
-export default function authRequired(ComposedComponent){
-  console.log('auth required called');
-  class Authentication extends Component{
-    isLoggedIn(){
-      let user = localStorage.getItem('user');
+export default function authRequired(ComposedComponent) {
+  console.log("auth required called");
+  class Authentication extends Component {
+    isLoggedIn() {
+      let user = localStorage.getItem("user");
 
-      if(!user){
-        console.log('returned false');
+      if (!user) {
+        console.log("returned false");
         return false;
       }
 
@@ -16,12 +16,14 @@ export default function authRequired(ComposedComponent){
       return !!currentUser.sessionToken;
     }
 
-    componentWillMount(){
-      console.log('Is Logged In: ', this.isLoggedIn());
-      !this.isLoggedIn() ? this.props.history.push(PROJECT_URI + '/login') : null;
+    componentWillMount() {
+      console.log("Is Logged In: ", this.isLoggedIn());
+      !this.isLoggedIn()
+        ? this.props.history.push(PROJECT_URI + "/login")
+        : null;
     }
 
-    render(){
+    render() {
       return this.isLoggedIn() ? <ComposedComponent {...this.props} /> : null;
     }
   }

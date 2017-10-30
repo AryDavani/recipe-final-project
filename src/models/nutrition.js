@@ -1,4 +1,4 @@
-function cleanData(num, place, servings){
+function cleanData(num, place, servings) {
   servings = servings || 1;
   if (!num) {
     return 0;
@@ -9,7 +9,7 @@ function cleanData(num, place, servings){
 function NutritionInfo(data, servings) {
   data = data || {};
   return {
-    caloriesFromFat: cleanData((data.totalFat * 9), 0, servings),
+    caloriesFromFat: cleanData(data.totalFat * 9, 0, servings),
     calories: cleanData(data.calories, 0, servings),
     totalFat: cleanData(data.totalFat, 1, servings),
     saturatedFat: cleanData(data.saturatedFat, 1, servings),
@@ -23,11 +23,11 @@ function NutritionInfo(data, servings) {
     fiber: cleanData(data.fiber, 1, servings) || 0,
     sugars: cleanData(data.sugars, 1, servings) || 0,
     protein: cleanData(data.protein, 1, servings) || 0,
-    vitaminA: cleanData((data.vitaminA / 5000 * 100), 1, servings) || 0,
-    vitaminC: cleanData((data.vitaminC / 60 * 100), 1, servings) || 0,
-    calcium: cleanData((data.calcium / 10), 1, servings) || 0,
-    iron: cleanData((data.iron / 18 * 100), 1, servings) || 0
-  }
+    vitaminA: cleanData(data.vitaminA / 5000 * 100, 1, servings) || 0,
+    vitaminC: cleanData(data.vitaminC / 60 * 100, 1, servings) || 0,
+    calcium: cleanData(data.calcium / 10, 1, servings) || 0,
+    iron: cleanData(data.iron / 18 * 100, 1, servings) || 0
+  };
 }
 
 export default NutritionInfo;

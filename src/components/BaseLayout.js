@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import React, { Component } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default class BaseLayout extends Component {
-
-  render(){
-    console.log('baselayout props', this.props);
+  render() {
     return (
       <div>
-        <Navbar user={this.props.user}/>
-        { this.props.children }
-        <Footer/>
+        <Navbar user={this.props.user} />
+        {this.props.children}
+        <Footer />
       </div>
-    )
+    );
   }
 }
