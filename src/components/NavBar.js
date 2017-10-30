@@ -12,12 +12,11 @@ export default class Navbar extends Component {
     return (
       <div className="navigation">
         <div className="user">
-          {/* <NavLink to={ PROJECT_URI + '/'}><i className="fa fa-home fa-lg"></i></NavLink> */}
           <h4 className="lastname">{this.props.user.lastname}</h4>
         </div>
         <div className="navbar1">
-          <NavLink to={PROJECT_URI + "/home"}>Dashboard</NavLink>
-          <NavLink to={PROJECT_URI + "/menu"}>Menu</NavLink>
+          <NavLink to={PROJECT_URI + "/home"} activeStyle={{ color: "#dfb500" }}>Dashboard</NavLink>
+          <NavLink to={PROJECT_URI + "/menu"} activeStyle={{ color: "#dfb500" }}>Menu</NavLink>
         </div>
         <div className="nav-options">
           {/* <h4 className="lastname">{this.props.user.lastname}</h4> */}
