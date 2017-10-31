@@ -18,8 +18,8 @@ My final project at The Iron Yard.
 
 ### Technologies
 
-  - mongoDB (Parse Server)
   - React
+  - Parse platform
   - Bootstrap UI
   - Nutritionix API
 
