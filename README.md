@@ -1,25 +1,29 @@
 Final project at The Iron Yard.
 
-Live here: https://arydavani.github.io/recipe-final-project/
+[See the project live here](https://arydavani.github.io/recipe-final-project/)
 
-# Document
 
-## Elevator
+
+# Data-Bites
+
+## Document
+
+### Elevator
 
   "Americans eat and drink about one-third of their calories away from home. Making calorie information available on chain restaurant menus will help consumers make informed choices for themselves and their families" -FDA
 
-## Solution
+### Solution
 
   Data-Bites allows restaurants to calculate the calorie information of their menu items, using bulk recipes.
 
-## Technologies
+### Technologies
 
   - mongoDB (Parse Server)
   - React
   - Bootstrap UI
   - Nutritionix API
 
-## Features
+### Features
 
   - Natural query language allows users to copy and paste recipes, regardless of format.
   - Nutrition label calculated for each menu item.
@@ -27,7 +31,7 @@ Live here: https://arydavani.github.io/recipe-final-project/
   - Shareable link
 
 
-## User stories
+### User stories
 
   - As someone who is enjoys a healthy lifestyle, I want to be able to make healthy choices when I go out to eat.
   - As someone who is on a strict diet, I need to keep track of how many calories I consume.
