@@ -1,10 +1,10 @@
-Final project at The Iron Yard.
+# Data-Bites
+
+My final project at The Iron Yard.
 
 [See the project live here](https://arydavani.github.io/recipe-final-project/)
 
-
-
-# Data-Bites
+![Home Page](./readme/homepage.png)
 
 ## Document
 
@@ -29,7 +29,6 @@ Final project at The Iron Yard.
   - Nutrition label calculated for each menu item.
   - Easily print nutrition label and full ingredients list.
   - Shareable link
-
 
 ### User stories
 
