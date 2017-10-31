@@ -48,7 +48,6 @@ export default class MenuContainer extends Component {
   render() {
     return (
       <BaseLayout user={this.state.user}>
-        {/* <h1 className="page-titles">My Menu Items</h1> */}
         <Menu menuItems={this.state.menuItems} />
       </BaseLayout>
     );

@@ -77,7 +77,6 @@ export default class Dashboard extends Component {
   render() {
     return (
       <BaseLayout user={this.state.user}>
-        {/* <h1 className="page-titles">My Dashboard</h1> */}
         <CrudList
           menuItems={this.state.menuItems}
           handleDelete={this._handleDelete}
