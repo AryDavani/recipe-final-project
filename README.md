@@ -28,7 +28,7 @@ My final project at The Iron Yard.
   - Natural query language allows users to copy and paste recipes, regardless of format.
   - Nutrition label calculated for each menu item.
   - Easily print nutrition label and full ingredients list.
-  - Shareable link
+  - Shareable link to recipe and label.
 
 ### User stories
 
