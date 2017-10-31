@@ -14,7 +14,7 @@ My final project at The Iron Yard.
 
 ### Solution
 
-  Data-Bites allows restaurants to calculate the calorie information of their menu items, using bulk recipes.
+  Bite-Size allows restaurants to calculate the calorie information of their menu items, using bulk recipes.
 
 ### Technologies
 
