@@ -1,10 +1,10 @@
-# Data-Bites
+# Bite-Size
 
 My final project at The Iron Yard.
 
 [See the project live here](https://arydavani.github.io/recipe-final-project/)
 
-![Home Page](./readme/homepage.png)
+![Home Page](./readme/homepage.png =250x250)
 
 ## Document
 
